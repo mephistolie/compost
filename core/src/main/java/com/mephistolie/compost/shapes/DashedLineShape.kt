@@ -11,6 +11,13 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.LayoutDirection
 import kotlin.math.roundToInt
 
+/**
+ * A shape describing the dashed line
+ *
+ * @param dashWidth a length of dash
+ * @param dashGap a length of space between dashes
+ * @param vertical controls line direction: horizontal or vertical
+ */
 data class DashedLineShape(
     val dashWidth: Dp,
     val dashGap: Dp = dashWidth,

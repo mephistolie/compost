@@ -18,6 +18,18 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.mephistolie.compost.modifiers.simpleClickable
 
+/**
+ * Analogue of standard [androidx.compose.material.RadioButton] with animated stroke instead of dot.
+ *
+ * @param isSelected whether is radio button selected
+ * @param onClick will be called when the user clicks the radio button
+ * @param modifier a [Modifier] for this text field
+ * @param size size of radio button
+ * @param dotSize size of radio button's inner circle
+ * @param borderWidth thickness of radio button's stroke
+ * @param color color of radio button
+ * @param enabled whether is radio button clickable
+ */
 @Composable
 fun RadioButton(
     isSelected: Boolean,

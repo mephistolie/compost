@@ -11,6 +11,21 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
+/**
+ * [Checkbox] implementation with rounded rectangle shape.
+ *
+ * @param isChecked whether is checkbox checked
+ * @param onClick will be called when the user clicks the checkbox
+ * @param modifier a [Modifier] for this text field
+ * @param checkmarkIcon icon for checked element
+ * @param size size of checkbox
+ * @param checkmarkSize size of [checkmarkIcon]
+ * @param cornerRadius radius of checkbox corners
+ * @param checkedColor color of box for checked element
+ * @param uncheckedColor color of box for unchecked element
+ * @param checkmarkColor color of [checkmarkIcon]
+ * @param enabled whether is checkbox clickable
+ */
 @Composable
 fun RectangleCheckbox(
     isChecked: Boolean,

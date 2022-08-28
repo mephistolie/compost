@@ -7,7 +7,6 @@
 </div>
 
 Compost is a kit of utility functions for Jetpack Compose that aim to speed up writing of common or simple things.
-It also depends on some other Compose libraries that follow a concept.
 
 ## Modules
 
@@ -58,7 +57,7 @@ Compost is a multimodule library, so you can implement just modules you need:
 
 Compost is a collection of independent useful things, so community defines it. Please contribute - we are happy to merge it!
 
-Please use [GitFlow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) and [Conventional Comits](https://www.conventionalcommits.org/en/v1.0.0/) to keep Git history clean:
+Please use [GitFlow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) and [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) to keep Git history clean:
 * `feature/XXX` for new stuff
 * `refactor/XXX` for improving existing stuff
 * `fix/XXX` for bug fixes

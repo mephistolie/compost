@@ -9,6 +9,7 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.icons.Icons
@@ -26,14 +27,29 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.mephistolie.compost.modifiers.simpleClickable
 
+/**
+ * Animated analogue of standard [androidx.compose.material.Checkbox] with customizable shape.
+ *
+ * @param isChecked whether is checkbox checked
+ * @param onClick will be called when the user clicks the checkbox
+ * @param modifier a [Modifier] for this text field
+ * @param checkmarkIcon icon for checked element
+ * @param size size of checkbox
+ * @param shape shape of checkbox
+ * @param checkmarkSize size of [checkmarkIcon]
+ * @param checkedColor color of box for checked element
+ * @param uncheckedColor color of box for unchecked element
+ * @param checkmarkColor color of [checkmarkIcon]
+ * @param enabled whether is checkbox clickable
+ */
 @Composable
 fun Checkbox(
     isChecked: Boolean,
     onClick: () -> Unit,
-    shape: Shape,
     modifier: Modifier = Modifier,
     checkmarkIcon: ImageVector = Icons.Rounded.Check,
     size: Dp = 24.dp,
+    shape: Shape = RoundedCornerShape(size / 12),
     checkmarkSize: Dp = size,
     checkedColor: Color = MaterialTheme.colors.secondary,
     uncheckedColor: Color = checkedColor,

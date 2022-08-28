@@ -42,12 +42,6 @@ dependencies {
     val composeVersion: String by rootProject.extra
     implementation("androidx.compose.runtime:runtime:$composeVersion")
     implementation("androidx.compose.material:material:$composeVersion")
-
-    val shimmerVersion = "1.0.3"
-    api("com.valentinilk.shimmer:compose-shimmer:$shimmerVersion")
-
-    val reorderableVersion = "0.9.2"
-    api("org.burnoutcrew.composereorderable:reorderable:$reorderableVersion")
 }
 
 afterEvaluate {

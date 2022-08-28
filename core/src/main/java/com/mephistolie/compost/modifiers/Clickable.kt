@@ -13,6 +13,11 @@ import androidx.compose.ui.composed
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.input.pointer.pointerInteropFilter
 
+/**
+ * Configure component to receive clicks without ripple effect and extra args.
+ *
+ * @param onClick will be called when user clicks on the element
+ */
 fun Modifier.simpleClickable(
     onClick: () -> Unit,
 ): Modifier = composed {
@@ -23,6 +28,13 @@ fun Modifier.simpleClickable(
     )
 }
 
+/**
+ * Configure component to receive clicks with size changing on press.
+ *
+ * @param pressed defines is button pressed
+ * @param scaleFactor size change factor
+ * @param onClick will be called when user clicks on the element
+ */
 @OptIn(ExperimentalComposeUiApi::class)
 fun Modifier.scalingClickable(
     pressed: MutableState<Boolean>,
@@ -46,6 +58,12 @@ fun Modifier.scalingClickable(
     }
 }
 
+/**
+ * Configure component to receive clicks with size changing on press.
+ *
+ * @param scaleFactor size change factor
+ * @param onClick will be called when user clicks on the element
+ */
 fun Modifier.scalingClickable(
     scaleFactor: Float = 0.975F,
     onClick: () -> Unit,

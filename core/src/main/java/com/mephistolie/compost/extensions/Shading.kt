@@ -10,6 +10,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 
+/**
+ * Used as an press effect. Instead of standard ripple this one is fade animated.
+ * Multiple shadings can be managed by single bool (for example, to create shading effect on whole complex item card).
+ *
+ * @param isVisible whether is shading applied
+ * @param color color used for shading
+ */
 @Composable
 fun BoxScope.Shading(
     isVisible: Boolean,

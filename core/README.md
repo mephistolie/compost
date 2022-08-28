@@ -19,8 +19,3 @@
 ## Shapes
 
 * `DashedLineShape` provides horizontal/vertical dashed line shape for dividers. Supports unequal width and gap.
-
-## Libraries
-
-* [Shimmer for Jetpack Compose](https://github.com/valentinilk/compose-shimmer) for shimmer effect
-* [Compose Reorderable](https://github.com/aclassen/ComposeReorderable) for drag & drop lists
