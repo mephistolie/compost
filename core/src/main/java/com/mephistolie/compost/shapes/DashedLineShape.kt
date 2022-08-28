@@ -28,15 +28,18 @@ data class DashedLineShape(
         layoutDirection: LayoutDirection,
         density: Density
     ) = Outline.Generic(Path().apply {
+        val primarySizeLength = if (!vertical) size.width else size.height
+        val secondarySizeLength = if (!vertical) size.height else size.width
+
         val (dashWidthPx, dashGapPx) = with(density) { Pair(dashWidth.toPx(), dashGap.toPx()) }
         val stepWidth = dashWidthPx + dashGapPx
-        val stepsCount = (size.width / stepWidth).roundToInt()
-        val realStepWidth = size.width / stepsCount
+        val stepsCount = (primarySizeLength / stepWidth).roundToInt()
+        val realStepWidth = primarySizeLength / stepsCount
         val dashWidthToStepWidthRatio = dashWidthPx / stepWidth
         val realDashWidth = realStepWidth * dashWidthToStepWidthRatio
         val dashSize = Size(
-            width = if (!vertical) realDashWidth else size.height,
-            height = if (!vertical) size.height else realDashWidth,
+            width = if (!vertical) realDashWidth else secondarySizeLength,
+            height = if (!vertical) secondarySizeLength else realDashWidth,
         )
         for (i in 0 until stepsCount) {
             addRect(
