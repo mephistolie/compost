@@ -18,12 +18,16 @@ import androidx.compose.ui.semantics.Role
 /**
  * Configure component to receive clicks without ripple effect and extra args.
  *
+ * @param debounceInterval minimum interval between two successful clicks. If null, standard clickable
+ * will be used
  * @param onClick will be called when user clicks on the element
  */
 fun Modifier.simpleClickable(
+    debounceInterval: Long? = null,
     onClick: () -> Unit,
 ): Modifier = composed {
-    clickable(
+    debounceClickable(
+        debounceInterval = debounceInterval,
         onClick = onClick,
         interactionSource = remember { MutableInteractionSource() },
         indication = null
@@ -33,16 +37,41 @@ fun Modifier.simpleClickable(
 /**
  * Configure component to receive clicks with size changing on press.
  *
+ * @param scaleFactor size change factor
+ * @param debounceInterval minimum interval between two successful clicks. If null, standard clickable
+ * will be used
+ * @param onClick will be called when user clicks on the element
+ */
+fun Modifier.scalingClickable(
+    scaleFactor: Float = 0.975F,
+    debounceInterval: Long? = null,
+    onClick: () -> Unit,
+): Modifier = composed {
+    scalingClickable(
+        pressed = remember { mutableStateOf(false) },
+        scaleFactor = scaleFactor,
+        debounceInterval = debounceInterval,
+        onClick = onClick,
+    )
+}
+
+/**
+ * Configure component to receive clicks with size changing on press.
+ *
  * @param pressed defines is button pressed
  * @param scaleFactor size change factor
+ * @param debounceInterval minimum interval between two successful clicks. If null, standard clickable
+ * will be used
  * @param onClick will be called when user clicks on the element
  */
 @OptIn(ExperimentalComposeUiApi::class)
 fun Modifier.scalingClickable(
     pressed: MutableState<Boolean>,
     scaleFactor: Float = 0.975F,
+    debounceInterval: Long? = null,
     onClick: () -> Unit,
 ): Modifier = composed {
+    var lastClickTime by remember { mutableStateOf(0L) }
 
     val scale = animateFloatAsState(if (!pressed.value) 1F else scaleFactor)
 
@@ -52,7 +81,12 @@ fun Modifier.scalingClickable(
             MotionEvent.ACTION_DOWN -> pressed.value = true
             MotionEvent.ACTION_CANCEL -> pressed.value = false
             MotionEvent.ACTION_UP -> {
-                onClick()
+                if (debounceInterval != null) {
+                    val currentTime = System.currentTimeMillis()
+                    if ((currentTime - lastClickTime) > debounceInterval) onClick() else lastClickTime = currentTime
+                } else {
+                    onClick()
+                }
                 pressed.value = false
             }
         }
