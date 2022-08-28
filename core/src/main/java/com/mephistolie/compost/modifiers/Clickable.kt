@@ -84,7 +84,7 @@ fun Modifier.debounceClickable(
     onClick: () -> Unit,
 ): Modifier = composed {
     var lastClickTime by remember { mutableStateOf(0L) }
-    clickable() {
+    clickable {
         val currentTime = System.currentTimeMillis()
         if ((currentTime - lastClickTime) < debounceInterval) return@clickable
         lastClickTime = currentTime
