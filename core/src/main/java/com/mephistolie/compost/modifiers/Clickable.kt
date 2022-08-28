@@ -75,23 +75,24 @@ fun Modifier.scalingClickable(
 
     val scale = animateFloatAsState(if (!pressed.value) 1F else scaleFactor)
 
-    scale(scale.value)
-    pointerInteropFilter {
-        when (it.action) {
-            MotionEvent.ACTION_DOWN -> pressed.value = true
-            MotionEvent.ACTION_CANCEL -> pressed.value = false
-            MotionEvent.ACTION_UP -> {
-                if (debounceInterval != null) {
-                    val currentTime = System.currentTimeMillis()
-                    if ((currentTime - lastClickTime) > debounceInterval) onClick() else lastClickTime = currentTime
-                } else {
-                    onClick()
+    this
+        .scale(scale.value)
+        .pointerInteropFilter {
+            when (it.action) {
+                MotionEvent.ACTION_DOWN -> pressed.value = true
+                MotionEvent.ACTION_CANCEL -> pressed.value = false
+                MotionEvent.ACTION_UP -> {
+                    if (debounceInterval != null) {
+                        val currentTime = System.currentTimeMillis()
+                        if ((currentTime - lastClickTime) > debounceInterval) onClick() else lastClickTime = currentTime
+                    } else {
+                        onClick()
+                    }
+                    pressed.value = false
                 }
-                pressed.value = false
             }
+            true
         }
-        true
-    }
 }
 
 /**
