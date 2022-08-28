@@ -5,7 +5,7 @@
 ### Text Fields
 
 * `TextField` is an analogue of standard TextField with more freedom. Instead of original it has modifiable paddings and doesn't apply background, minimum size and indicator line modifiers. You can add them by pass suitable modifier by default. Also singleLine argument reduced to maxLines.
-* `IndicatorLineTextField` is an `TextField` with customizable indicator line. It also hasn't horizontal paddings by default, so text'll be printed exactly from the beginning of the line.
+* `IndicatorLineTextField` is an `TextField` with customizable indicator line. It also hasn't horizontal paddings by default, so text will be printed exactly from the beginning of the line.
 
 ### Buttons
 

@@ -48,7 +48,7 @@ fun RadioButton(
     }
 
     var baseModifier = modifier.size(size)
-    if (enabled) baseModifier = baseModifier.simpleClickable(onClick)
+    if (enabled) baseModifier = baseModifier.simpleClickable(onClick = onClick)
 
     Box(
         modifier = baseModifier

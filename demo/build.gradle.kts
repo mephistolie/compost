@@ -57,6 +57,9 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1")
     implementation("androidx.activity:activity-compose:1.5.1")
 
+    val accompanistVersion = "0.25.1"
+    implementation("com.google.accompanist:accompanist-pager:$accompanistVersion")
+
     implementation(project(":core"))
     implementation(project(":ui"))
 }

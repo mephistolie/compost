@@ -62,6 +62,6 @@ Please use [GitFlow](https://www.atlassian.com/git/tutorials/comparing-workflows
 * `refactor/XXX` for improving existing stuff
 * `fix/XXX` for bug fixes
 
-If you add new features, describe it in suitable README.
+If you add new features, describe it in suitable README. Every feature should have documentation in code, description in README.md and demonstration at demo app.
 
 If you add someone else's code to collection, make sure that you do not violate the rights and added link to source.
