@@ -13,24 +13,25 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.mephistolie.compost.extensions.Shading
 import com.mephistolie.compost.modifiers.clippedBackground
 import com.mephistolie.compost.modifiers.scalingClickable
 
-fun LazyListScope.ScalingClickableFeature() {
+fun LazyListScope.ScalingClickableFeatureContent() {
     item {
+        val pressed = remember { mutableStateOf(false) }
+
         Box(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(48.dp)
+                .scalingClickable(pressed = pressed, scaleFactor = 0.8F){}
                 .clippedBackground(
                     background = MaterialTheme.colors.primary,
                     shape = RoundedCornerShape(8.dp)
-                )
-                .scalingClickable{},
+                ),
             contentAlignment = Alignment.Center,
         ) {
-            Text(text = "CLICKABLE BOX", color = Color.White)
+            Text(text = "SCALING CLICKABLE BOX", color = Color.White)
         }
     }
 }

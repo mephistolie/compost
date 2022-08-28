@@ -36,7 +36,7 @@ fun LazyListScope.ShadingFeatureContent() {
                 ),
             contentAlignment = Alignment.Center,
         ) {
-            Text(text = "CLICKABLE BOX", color = Color.White)
+            Text(text = "SHADING CLICKABLE BOX", color = Color.White)
             Shading(pressed.value)
         }
     }

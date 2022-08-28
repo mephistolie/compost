@@ -47,7 +47,7 @@ fun GroupScreen(
         )
         LazyColumn(
             modifier = Modifier
-                .padding(horizontal = 16.dp)
+                .padding(horizontal = 12.dp)
                 .fillMaxWidth()
                 .wrapContentHeight()
         ) {

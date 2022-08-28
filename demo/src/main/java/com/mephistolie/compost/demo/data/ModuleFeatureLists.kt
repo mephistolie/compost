@@ -39,8 +39,18 @@ val coreFeatures = listOf(
             ),
             Feature(
                 name = "debounceClickable()",
-                description ="Allows you to set click timeout to prevent extra clicks.",
+                description ="Allows you to set click timeout to prevent extra clicks. Button below shows toasts and has 5 seconds debounce interval",
                 type = FeatureType.DEBOUNCE_CLICKABLE
+            ),
+        ),
+    ),
+    FeatureGroup(
+        name = "Shapes",
+        features = listOf(
+            Feature(
+                name = "DashedLineShape",
+                description ="Provides horizontal/vertical dashed line shape for dividers. Supports unequal width and gap.",
+                type = FeatureType.DASHED_LINE_SHAPE
             ),
         ),
     )

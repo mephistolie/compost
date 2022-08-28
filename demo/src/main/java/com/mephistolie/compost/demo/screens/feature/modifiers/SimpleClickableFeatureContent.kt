@@ -17,10 +17,11 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import com.mephistolie.compost.extensions.Shading
 import com.mephistolie.compost.modifiers.clippedBackground
-import com.mephistolie.compost.modifiers.debounceClickable
 import com.mephistolie.compost.modifiers.scalingClickable
+import com.mephistolie.compost.modifiers.simpleClickable
+import kotlin.coroutines.coroutineContext
 
-fun LazyListScope.DebounceClickableFeature() {
+fun LazyListScope.SimpleClickableFeatureContent() {
     item {
         val context = LocalContext.current
 
@@ -32,12 +33,12 @@ fun LazyListScope.DebounceClickableFeature() {
                     background = MaterialTheme.colors.primary,
                     shape = RoundedCornerShape(8.dp)
                 )
-                .debounceClickable(debounceInterval = 5000) {
+                .simpleClickable{
                     Toast.makeText(context, "CLICKED", Toast.LENGTH_SHORT).show()
                 },
             contentAlignment = Alignment.Center,
         ) {
-            Text(text = "CLICKABLE BOX", color = Color.White)
+            Text(text = "SIMPLE CLICKABLE BOX", color = Color.White)
         }
     }
 }

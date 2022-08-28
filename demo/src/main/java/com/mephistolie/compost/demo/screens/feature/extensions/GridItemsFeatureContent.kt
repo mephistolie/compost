@@ -16,7 +16,7 @@ import androidx.compose.ui.unit.dp
 import com.mephistolie.compost.extensions.gridItems
 import com.mephistolie.compost.modifiers.clippedBackground
 
-fun LazyListScope.GridItemsFeature() {
+fun LazyListScope.GridItemsFeatureContent() {
     val dataset = List(10) { it + 1 }
     gridItems(
         data = dataset.subList(0, 4),
