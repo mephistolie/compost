@@ -10,14 +10,14 @@
 ### Buttons
 
 * `CircleIconButton` is a round button with icon.
-* `CircleImageButton` is a round button with image. Useful when need to use a pixel image. In other cases use function above.
+* `CircleImageButton` is a round button with image. Useful when need to use a multicolor image. In other cases use function above.
 * `TextButton` is a button with text inside.
 
 ### Checkboxes
 
 * `Checkbox` is an animated analogue of standard Checkbox with customizable shape.
 * `CircleCheckbox` is an `Checkbox` implementation with circle shape.
-* `RoundedCheckbox` is an `Checkbox` implementation with rounded rectangle shape.
+* `RectangleCheckbox` is an `Checkbox` implementation with rectangle shape. Supports corner radius.
 
 ### Radio Buttons
 * `RadioButton` is a customizable analogue of standard RadioButton.

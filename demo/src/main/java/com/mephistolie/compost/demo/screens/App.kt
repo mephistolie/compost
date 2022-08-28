@@ -15,10 +15,14 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.withResumed
+import com.google.accompanist.pager.ExperimentalPagerApi
+import com.google.accompanist.pager.rememberPagerState
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.mephistolie.compost.demo.models.FeatureGroup
 import com.mephistolie.compost.demo.screens.group.GroupScreen
 import com.mephistolie.compost.demo.screens.main.MainScreen
 
+@OptIn(ExperimentalPagerApi::class)
 @Composable
 fun DemoApp() {
     MaterialTheme(
@@ -38,7 +42,13 @@ fun DemoApp() {
             isLight = true,
         )
     ) {
+        val systemUiController = rememberSystemUiController()
+        systemUiController.setStatusBarColor(
+            color = MaterialTheme.colors.primary,
+        )
+
         val context = LocalContext.current
+        val pagerState = rememberPagerState()
         var openGroup by remember { mutableStateOf<FeatureGroup?>(null) }
 
         BackHandler(
@@ -49,7 +59,7 @@ fun DemoApp() {
 
         openGroup.let { group ->
             if (group == null) {
-                MainScreen(onGroupClick = { feature -> openGroup = feature })
+                MainScreen(pagerState = pagerState, onGroupClick = { feature -> openGroup = feature })
             } else {
                 GroupScreen(group, onClose = { openGroup = null })
             }

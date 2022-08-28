@@ -16,8 +16,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
+import com.google.accompanist.pager.PagerState
 import com.google.accompanist.pager.rememberPagerState
 import com.mephistolie.compost.demo.data.coreFeatures
+import com.mephistolie.compost.demo.data.uiFeatures
 import com.mephistolie.compost.demo.models.FeatureGroup
 import com.mephistolie.compost.demo.models.Module
 import kotlinx.coroutines.launch
@@ -25,12 +27,12 @@ import kotlinx.coroutines.launch
 @OptIn(ExperimentalPagerApi::class)
 @Composable
 fun MainScreen(
+    pagerState: PagerState,
     onGroupClick: (FeatureGroup) -> Unit,
 ) {
     val coroutine = rememberCoroutineScope()
 
     Column {
-        val pagerState = rememberPagerState()
         TabRow(
             selectedTabIndex = pagerState.currentPage,
         ) {
@@ -67,7 +69,7 @@ fun MainScreen(
                     }
                     Module.UI.ordinal -> {
                         GroupList(
-                            groups = coreFeatures,
+                            groups = uiFeatures,
                             onGroupClick = onGroupClick,
                         )
                     }

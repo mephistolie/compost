@@ -58,6 +58,7 @@ dependencies {
     implementation("androidx.activity:activity-compose:1.5.1")
 
     val accompanistVersion = "0.25.1"
+    implementation("com.google.accompanist:accompanist-systemuicontroller:$accompanistVersion")
     implementation("com.google.accompanist:accompanist-pager:$accompanistVersion")
 
     implementation(project(":core"))
