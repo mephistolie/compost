@@ -22,7 +22,7 @@ import androidx.compose.ui.unit.dp
 import com.mephistolie.compost.ui.buttons.CircleIconButton
 import com.mephistolie.compost.ui.checkboxes.RectangleCheckbox
 
-fun LazyListScope.RectangleCheckboxCheckboxFeatureComponent() {
+fun LazyListScope.RectangleCheckboxFeatureComponent() {
     item {
         Row(
             modifier = Modifier

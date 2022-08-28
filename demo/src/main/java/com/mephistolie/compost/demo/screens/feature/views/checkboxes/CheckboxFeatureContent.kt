@@ -26,7 +26,7 @@ import com.mephistolie.compost.ui.buttons.CircleIconButton
 import com.mephistolie.compost.ui.checkboxes.Checkbox
 import com.mephistolie.compost.ui.checkboxes.RectangleCheckbox
 
-fun LazyListScope.CheckboxCheckboxFeatureComponent() {
+fun LazyListScope.CheckboxFeatureComponent() {
     item {
         Row(
             modifier = Modifier
