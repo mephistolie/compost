@@ -60,4 +60,19 @@ val uiFeatures = listOf(
             ),
         ),
     ),
+    FeatureGroup(
+        name = "Radio Buttons",
+        features = listOf(
+            Feature(
+                name = "RadioButton",
+                description = "Customizable animated analogue of standard RadioButton.",
+                type = FeatureType.RADIO_BUTTON
+            ),
+            Feature(
+                name = "OutlineRadioButton",
+                description = "RadioButton with animated stroke instead of dot.",
+                type = FeatureType.OUTLINE_RADIO_BUTTON
+            ),
+        ),
+    ),
 )

@@ -20,5 +20,5 @@
 * `RectangleCheckbox` is an `Checkbox` implementation with rectangle shape. Supports corner radius.
 
 ### Radio Buttons
-* `RadioButton` is a customizable analogue of standard RadioButton.
+* `RadioButton` is a customizable animated analogue of standard RadioButton.
 * `OutlineRadioButton` is an RadioButton with animated stroke instead of dot.

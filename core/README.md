@@ -9,7 +9,7 @@
 
 ### Background
 
-* `clippedBackground()` creates clipped background instead of standard `background()` that applies shape only visually.
+* `clippedBackground()` creates clipped background instead of standard `background()` that applies shape only visually. Suitable for clipping clickable modifier's ripple.
 
 ### Clickable
 

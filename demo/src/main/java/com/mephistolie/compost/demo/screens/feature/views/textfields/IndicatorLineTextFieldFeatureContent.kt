@@ -18,7 +18,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.unit.dp
 import com.mephistolie.compost.ui.textfields.IndicatorLineTextField
-import com.mephistolie.compost.ui.textfields.TextField
 
 @OptIn(ExperimentalComposeUiApi::class)
 fun LazyListScope.IndicatorLineTextFieldFeatureContent() {

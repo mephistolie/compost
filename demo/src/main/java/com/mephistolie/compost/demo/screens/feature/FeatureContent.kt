@@ -5,6 +5,7 @@ import com.mephistolie.compost.demo.models.Feature
 import com.mephistolie.compost.demo.models.FeatureType
 import com.mephistolie.compost.demo.screens.feature.extensions.GridItemsFeatureContent
 import com.mephistolie.compost.demo.screens.feature.extensions.ShadingFeatureContent
+import com.mephistolie.compost.demo.screens.feature.modifiers.ClippedBackgroundFeatureContent
 import com.mephistolie.compost.demo.screens.feature.modifiers.DebounceClickableFeatureContent
 import com.mephistolie.compost.demo.screens.feature.modifiers.ScalingClickableFeatureContent
 import com.mephistolie.compost.demo.screens.feature.modifiers.SimpleClickableFeatureContent
@@ -14,9 +15,11 @@ import com.mephistolie.compost.demo.screens.feature.views.TextFieldFeatureConten
 import com.mephistolie.compost.demo.screens.feature.views.buttons.CircleIconButtonFeatureContent
 import com.mephistolie.compost.demo.screens.feature.views.buttons.CircleImageButtonFeatureContent
 import com.mephistolie.compost.demo.screens.feature.views.buttons.TextButtonFeatureContent
-import com.mephistolie.compost.demo.screens.feature.views.checkboxes.CheckboxCheckboxFeatureComponent
-import com.mephistolie.compost.demo.screens.feature.views.checkboxes.CircleCheckboxCheckboxFeatureComponent
-import com.mephistolie.compost.demo.screens.feature.views.checkboxes.RectangleCheckboxCheckboxFeatureComponent
+import com.mephistolie.compost.demo.screens.feature.views.checkboxes.CheckboxFeatureComponent
+import com.mephistolie.compost.demo.screens.feature.views.checkboxes.CircleCheckboxFeatureComponent
+import com.mephistolie.compost.demo.screens.feature.views.checkboxes.RectangleCheckboxFeatureComponent
+import com.mephistolie.compost.demo.screens.feature.views.radiobuttons.OutlineRadioButtonFeatureComponent
+import com.mephistolie.compost.demo.screens.feature.views.radiobuttons.RadioButtonFeatureComponent
 
 fun LazyListScope.FeatureContent(
     feature: Feature,
@@ -24,6 +27,7 @@ fun LazyListScope.FeatureContent(
     when (feature.type) {
         FeatureType.SHADING -> ShadingFeatureContent()
         FeatureType.GRID_ITEMS -> GridItemsFeatureContent()
+        FeatureType.CLIPPED_BACKGROUND -> ClippedBackgroundFeatureContent()
         FeatureType.SIMPLE_CLICKABLE -> SimpleClickableFeatureContent()
         FeatureType.SCALING_CLICKABLE -> ScalingClickableFeatureContent()
         FeatureType.DEBOUNCE_CLICKABLE -> DebounceClickableFeatureContent()
@@ -33,9 +37,10 @@ fun LazyListScope.FeatureContent(
         FeatureType.CIRCLE_ICON_BUTTON -> CircleIconButtonFeatureContent()
         FeatureType.CIRCLE_IMAGE_BUTTON -> CircleImageButtonFeatureContent()
         FeatureType.TEXT_BUTTON -> TextButtonFeatureContent()
-        FeatureType.CHECKBOX -> CheckboxCheckboxFeatureComponent()
-        FeatureType.CIRCLE_CHECKBOX -> CircleCheckboxCheckboxFeatureComponent()
-        FeatureType.RECTANGLE_CHECKBOX -> RectangleCheckboxCheckboxFeatureComponent()
-        else -> {}
+        FeatureType.CHECKBOX -> CheckboxFeatureComponent()
+        FeatureType.CIRCLE_CHECKBOX -> CircleCheckboxFeatureComponent()
+        FeatureType.RECTANGLE_CHECKBOX -> RectangleCheckboxFeatureComponent()
+        FeatureType.RADIO_BUTTON -> RadioButtonFeatureComponent()
+        FeatureType.OUTLINE_RADIO_BUTTON -> OutlineRadioButtonFeatureComponent()
     }
 }

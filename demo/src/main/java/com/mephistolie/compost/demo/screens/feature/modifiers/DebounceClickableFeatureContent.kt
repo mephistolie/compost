@@ -8,21 +8,18 @@ import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import com.mephistolie.compost.extensions.Shading
 import com.mephistolie.compost.modifiers.clippedBackground
 import com.mephistolie.compost.modifiers.debounceClickable
-import com.mephistolie.compost.modifiers.scalingClickable
 
 fun LazyListScope.DebounceClickableFeatureContent() {
     item {
         val context = LocalContext.current
+        var toast: Toast? = null
 
         Box(
             modifier = Modifier
@@ -33,7 +30,9 @@ fun LazyListScope.DebounceClickableFeatureContent() {
                     shape = RoundedCornerShape(8.dp)
                 )
                 .debounceClickable(debounceInterval = 5000) {
-                    Toast.makeText(context, "CLICKED", Toast.LENGTH_SHORT).show()
+                    toast?.cancel()
+                    toast = Toast.makeText(context, "CLICKED", Toast.LENGTH_SHORT)
+                    toast?.show()
                 },
             contentAlignment = Alignment.Center,
         ) {

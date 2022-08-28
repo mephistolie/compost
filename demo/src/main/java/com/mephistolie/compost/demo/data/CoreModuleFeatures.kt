@@ -28,6 +28,12 @@ val coreFeatures = listOf(
         name = "Modifiers",
         features = listOf(
             Feature(
+                name = "clippedBackground()",
+                description = "Creates clipped background instead of standard background() that applies " +
+                        "shape only visually. Suitable for clipping clickable modifier's ripple.",
+                type = FeatureType.CLIPPED_BACKGROUND
+            ),
+            Feature(
                 name = "simpleClickable()",
                 description = "Allows you to set on click action without ripple effect and extra args.",
                 type = FeatureType.SIMPLE_CLICKABLE
@@ -39,7 +45,8 @@ val coreFeatures = listOf(
             ),
             Feature(
                 name = "debounceClickable()",
-                description = "Allows you to set click timeout to prevent extra clicks. Button below shows toasts and has 5 seconds debounce interval",
+                description = "Allows you to set click timeout to prevent extra clicks. Button below shows toasts and has " +
+                        "5 seconds debounce interval.",
                 type = FeatureType.DEBOUNCE_CLICKABLE
             ),
         ),

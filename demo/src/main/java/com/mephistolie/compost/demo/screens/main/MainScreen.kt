@@ -17,7 +17,6 @@ import androidx.compose.ui.unit.dp
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.PagerState
-import com.google.accompanist.pager.rememberPagerState
 import com.mephistolie.compost.demo.data.coreFeatures
 import com.mephistolie.compost.demo.data.uiFeatures
 import com.mephistolie.compost.demo.models.FeatureGroup
