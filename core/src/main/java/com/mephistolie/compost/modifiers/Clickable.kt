@@ -4,9 +4,7 @@ import android.view.MotionEvent
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
-import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.*
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.composed
@@ -73,4 +71,23 @@ fun Modifier.scalingClickable(
         scaleFactor = scaleFactor,
         onClick = onClick
     )
+}
+
+/**
+ * Configure component to set the interval between successful clicks.
+ *
+ * @param debounceInterval minimum interval between two successful clicks
+ * @param onClick will be called when the element is successfully clicked
+ **/
+fun Modifier.debounceClickable(
+    debounceInterval: Long = 500L,
+    onClick: () -> Unit,
+): Modifier = composed {
+    var lastClickTime by remember { mutableStateOf(0L) }
+    clickable() {
+        val currentTime = System.currentTimeMillis()
+        if ((currentTime - lastClickTime) < debounceInterval) return@clickable
+        lastClickTime = currentTime
+        onClick()
+    }
 }
