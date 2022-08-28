@@ -15,6 +15,7 @@
 
 * `simpleClickable()` allows you to set on click action without ripple effect and extra args.
 * `scalingClickable()` allows you to change element size on click.
+* `debounceClickable()` allows you to set click timeout to prevent extra clicks.
 
 ## Shapes
 
