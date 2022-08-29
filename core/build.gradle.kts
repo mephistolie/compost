@@ -1,6 +1,6 @@
 plugins {
-    alias(libs.plugins.androidLibrary)
-    alias(libs.plugins.kotlinAndroid)
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.android)
     id("maven-publish")
 }
 
@@ -39,7 +39,7 @@ android {
 }
 
 dependencies {
-    implementation(libs.composeMaterial)
+    implementation(libs.compose.material)
 }
 
 afterEvaluate {

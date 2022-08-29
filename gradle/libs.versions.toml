@@ -1,32 +1,32 @@
 [versions]
 
-androidGradlePlugin = "7.2.2"
+android-gradlePlugin = "7.2.2"
 kotlin = "1.7.0"
 
-androidXCore = "1.8.0"
-activityCompose = "1.5.1"
+androidx-core = "1.8.0"
+androidx-activity-compose = "1.5.1"
 
 compose = "1.2.0"
-composeRuntime = "1.2.1"
-composeUi = "1.2.1"
-composeMaterial = "1.2.1"
+compose-runtime = "1.2.1"
+compose-ui = "1.2.1"
+compose-material = "1.2.1"
 
 accompanist = "0.25.1"
 
 [libraries]
 
-androidXCore = { group = "androidx.core", name = "core-ktx", version.ref = "androidXCore" }
-activityCompose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-core = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidx-activity-compose" }
 
-composeRuntime = { group = "androidx.compose.runtime", name = "runtime", version.ref = "composeRuntime" }
-composeUi = { group = "androidx.compose.ui", name = "ui", version.ref = "composeUi" }
-composeMaterial = { group = "androidx.compose.material", name = "material", version.ref = "composeMaterial" }
+compose-runtime = { group = "androidx.compose.runtime", name = "runtime", version.ref = "compose-runtime" }
+compose-ui = { group = "androidx.compose.ui", name = "ui", version.ref = "compose-ui" }
+compose-material = { group = "androidx.compose.material", name = "material", version.ref = "compose-material" }
 
-accompanistSystemUiController = { group = "com.google.accompanist", name = "accompanist-systemuicontroller", version.ref = "accompanist" }
-accompanistPager = { group = "com.google.accompanist", name = "accompanist-pager", version.ref = "accompanist" }
+accompanist-systemUiController = { group = "com.google.accompanist", name = "accompanist-systemuicontroller", version.ref = "accompanist" }
+accompanist-pager = { group = "com.google.accompanist", name = "accompanist-pager", version.ref = "accompanist" }
 
 [plugins]
 
-androidApplication = { id = "com.android.application", version.ref = "androidGradlePlugin" }
-androidLibrary = { id = "com.android.library", version.ref = "androidGradlePlugin" }
-kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+android-application = { id = "com.android.application", version.ref = "android-gradlePlugin" }
+android-library = { id = "com.android.library", version.ref = "android-gradlePlugin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

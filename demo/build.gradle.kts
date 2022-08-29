@@ -1,6 +1,6 @@
 plugins {
-    alias(libs.plugins.androidApplication)
-    alias(libs.plugins.kotlinAndroid)
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
 }
 
 android {
@@ -49,13 +49,13 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidXCore)
-    implementation(libs.activityCompose)
+    implementation(libs.androidx.core)
+    implementation(libs.androidx.activity.compose)
 
-    implementation(libs.composeMaterial)
+    implementation(libs.compose.material)
 
-    implementation(libs.accompanistSystemUiController)
-    implementation(libs.accompanistPager)
+    implementation(libs.accompanist.systemUiController)
+    implementation(libs.accompanist.pager)
 
     implementation(project(":core"))
     implementation(project(":ui"))
