@@ -19,7 +19,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.mephistolie.compost.demo.models.FeatureGroup
 
-fun LazyListScope.FeatureGroup(
+fun LazyListScope.featureGroup(
     group: FeatureGroup,
     onGroupClick: (FeatureGroup) -> Unit,
 ) {

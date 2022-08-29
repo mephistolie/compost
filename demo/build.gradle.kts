@@ -4,14 +4,14 @@ plugins {
 }
 
 android {
-    compileSdk = rootProject.extra.get("compileSdk") as Int
+    compileSdk = Config.compileSdk
 
     defaultConfig {
-        applicationId = "com.mephistolie.compost.demo"
-        minSdk = rootProject.extra.get("minSdk") as Int
-        targetSdk = rootProject.extra.get("targetSdk") as Int
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = Config.applicationId
+        minSdk = Config.minSdk
+        targetSdk = Config.targetSdk
+        versionCode = Config.versionCode
+        versionName = Config.version
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -39,7 +39,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = rootProject.extra.get("composeVersion") as String
+        kotlinCompilerExtensionVersion = Dependencies.Compose.version
     }
     packagingOptions {
         resources {
@@ -49,17 +49,13 @@ android {
 }
 
 dependencies {
-    val composeVersion: String by rootProject.extra
-    implementation("androidx.core:core-ktx:1.8.0")
-    implementation("androidx.compose.material:material:$composeVersion")
-    implementation("androidx.compose.ui:ui:$composeVersion}")
-    implementation("androidx.compose.ui:ui-tooling-preview:$composeVersion")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1")
-    implementation("androidx.activity:activity-compose:1.5.1")
+    implementation(Dependencies.AndroidX.core)
+    implementation(Dependencies.AndroidX.activityCompose)
 
-    val accompanistVersion = "0.25.1"
-    implementation("com.google.accompanist:accompanist-systemuicontroller:$accompanistVersion")
-    implementation("com.google.accompanist:accompanist-pager:$accompanistVersion")
+    implementation(Dependencies.Compose.material)
+
+    implementation(Dependencies.Accompanist.systemUiController)
+    implementation(Dependencies.Accompanist.pager)
 
     implementation(project(":core"))
     implementation(project(":ui"))

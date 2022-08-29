@@ -18,7 +18,7 @@ fun GroupList(
             .wrapContentHeight()
     ) {
         groups.forEach { group ->
-            FeatureGroup(group = group, onGroupClick = onGroupClick)
+            featureGroup(group = group, onGroupClick = onGroupClick)
         }
     }
 }
