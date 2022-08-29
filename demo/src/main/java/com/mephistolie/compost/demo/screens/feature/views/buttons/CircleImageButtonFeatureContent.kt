@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.dp
 import com.mephistolie.compost.demo.R
 import com.mephistolie.compost.ui.buttons.CircleImageButton
 
-fun LazyListScope.CircleImageButtonFeatureContent() {
+fun LazyListScope.circleImageButtonFeatureContent() {
     item {
         Box(
             modifier = Modifier

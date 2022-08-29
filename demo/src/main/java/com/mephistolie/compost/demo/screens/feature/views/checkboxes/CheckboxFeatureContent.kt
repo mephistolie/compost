@@ -19,7 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.mephistolie.compost.ui.checkboxes.Checkbox
 
-fun LazyListScope.CheckboxFeatureComponent() {
+fun LazyListScope.checkboxFeatureComponent() {
     item {
         Row(
             modifier = Modifier

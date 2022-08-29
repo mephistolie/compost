@@ -16,7 +16,7 @@ import androidx.compose.ui.unit.dp
 import com.mephistolie.compost.modifiers.clippedBackground
 import com.mephistolie.compost.modifiers.debounceClickable
 
-fun LazyListScope.DebounceClickableFeatureContent() {
+fun LazyListScope.debounceClickableFeatureContent() {
     item {
         val context = LocalContext.current
         var toast: Toast? = null

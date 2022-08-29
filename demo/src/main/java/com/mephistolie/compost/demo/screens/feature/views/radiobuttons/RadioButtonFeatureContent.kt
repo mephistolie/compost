@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.mephistolie.compost.ui.radiobuttons.RadioButton
 
-fun LazyListScope.RadioButtonFeatureComponent() {
+fun LazyListScope.radioButtonFeatureComponent() {
     item {
         Row(
             modifier = Modifier

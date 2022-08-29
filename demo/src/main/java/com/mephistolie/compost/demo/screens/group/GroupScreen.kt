@@ -20,7 +20,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.mephistolie.compost.demo.models.FeatureGroup
-import com.mephistolie.compost.demo.screens.feature.FeatureContent
+import com.mephistolie.compost.demo.screens.feature.featureContent
 
 @Composable
 fun GroupScreen(
@@ -72,7 +72,7 @@ fun GroupScreen(
                             .align(Alignment.Start)
                     )
                 }
-                FeatureContent(feature)
+                featureContent(feature)
                 item {
                     Spacer(modifier = Modifier.height(24.dp))
                 }

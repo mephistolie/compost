@@ -1,4 +1,4 @@
-package com.mephistolie.compost.demo.screens.feature.views
+package com.mephistolie.compost.demo.screens.feature.views.textfields
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -22,7 +22,7 @@ import androidx.compose.ui.unit.dp
 import com.mephistolie.compost.ui.textfields.TextField
 
 @OptIn(ExperimentalComposeUiApi::class)
-fun LazyListScope.TextFieldFeatureContent() {
+fun LazyListScope.textFieldFeatureContent() {
     item {
         val keyboardController = LocalSoftwareKeyboardController.current
         val firstText = remember { mutableStateOf("") }

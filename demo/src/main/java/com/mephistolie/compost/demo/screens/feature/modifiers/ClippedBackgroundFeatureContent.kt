@@ -17,7 +17,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.mephistolie.compost.modifiers.clippedBackground
 
-fun LazyListScope.ClippedBackgroundFeatureContent() {
+fun LazyListScope.clippedBackgroundFeatureContent() {
     item {
         Column {
             repeat(2) { index ->

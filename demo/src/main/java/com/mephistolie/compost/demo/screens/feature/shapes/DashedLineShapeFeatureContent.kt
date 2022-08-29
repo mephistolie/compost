@@ -15,7 +15,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.mephistolie.compost.shapes.DashedLineShape
 
-fun LazyListScope.DashedLineShapeFeatureContent() {
+fun LazyListScope.dashedLineShapeFeatureContent() {
     item {
         Box(
             modifier = Modifier

@@ -14,7 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.mephistolie.compost.ui.buttons.CircleIconButton
 
-fun LazyListScope.CircleIconButtonFeatureContent() {
+fun LazyListScope.circleIconButtonFeatureContent() {
     item {
         Row(
             modifier = Modifier

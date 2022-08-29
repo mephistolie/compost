@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.dp
 import com.mephistolie.compost.modifiers.clippedBackground
 import com.mephistolie.compost.ui.buttons.TextButton
 
-fun LazyListScope.TextButtonFeatureContent() {
+fun LazyListScope.textButtonFeatureContent() {
     item {
         Column(
             modifier = Modifier

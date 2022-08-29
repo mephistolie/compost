@@ -16,7 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.mephistolie.compost.ui.checkboxes.CircleCheckbox
 
-fun LazyListScope.CircleCheckboxFeatureComponent() {
+fun LazyListScope.circleCheckboxFeatureComponent() {
     item {
         Row(
             modifier = Modifier

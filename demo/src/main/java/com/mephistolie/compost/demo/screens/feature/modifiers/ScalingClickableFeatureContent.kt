@@ -16,7 +16,7 @@ import androidx.compose.ui.unit.dp
 import com.mephistolie.compost.modifiers.clippedBackground
 import com.mephistolie.compost.modifiers.scalingClickable
 
-fun LazyListScope.ScalingClickableFeatureContent() {
+fun LazyListScope.scalingClickableFeatureContent() {
     item {
         val pressed = remember { mutableStateOf(false) }
 

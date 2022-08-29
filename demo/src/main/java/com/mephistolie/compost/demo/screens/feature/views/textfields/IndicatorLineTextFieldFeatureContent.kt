@@ -1,4 +1,4 @@
-package com.mephistolie.compost.demo.screens.feature.views
+package com.mephistolie.compost.demo.screens.feature.views.textfields
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.dp
 import com.mephistolie.compost.ui.textfields.IndicatorLineTextField
 
 @OptIn(ExperimentalComposeUiApi::class)
-fun LazyListScope.IndicatorLineTextFieldFeatureContent() {
+fun LazyListScope.indicatorLineTextFieldFeatureContent() {
     item {
         val keyboardController = LocalSoftwareKeyboardController.current
 

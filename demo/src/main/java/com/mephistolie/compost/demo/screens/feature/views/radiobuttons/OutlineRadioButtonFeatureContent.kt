@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.mephistolie.compost.ui.radiobuttons.OutlineRadioButton
 
-fun LazyListScope.OutlineRadioButtonFeatureComponent() {
+fun LazyListScope.outlineRadioButtonFeatureComponent() {
     item {
         Row(
             modifier = Modifier

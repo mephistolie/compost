@@ -17,7 +17,7 @@ import com.mephistolie.compost.extensions.Shading
 import com.mephistolie.compost.modifiers.clippedBackground
 import com.mephistolie.compost.modifiers.scalingClickable
 
-fun LazyListScope.ShadingFeatureContent() {
+fun LazyListScope.shadingFeatureContent() {
     item {
         val pressed = remember { mutableStateOf(false) }
 

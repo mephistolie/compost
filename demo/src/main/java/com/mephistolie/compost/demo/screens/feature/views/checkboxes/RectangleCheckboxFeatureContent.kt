@@ -16,7 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.mephistolie.compost.ui.checkboxes.RectangleCheckbox
 
-fun LazyListScope.RectangleCheckboxFeatureComponent() {
+fun LazyListScope.rectangleCheckboxFeatureComponent() {
     item {
         Row(
             modifier = Modifier
