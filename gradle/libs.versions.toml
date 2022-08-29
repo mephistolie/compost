@@ -1,0 +1,32 @@
+[versions]
+
+androidGradlePlugin = "7.2.2"
+kotlin = "1.7.0"
+
+androidXCore = "1.8.0"
+activityCompose = "1.5.1"
+
+compose = "1.2.0"
+composeRuntime = "1.2.1"
+composeUi = "1.2.1"
+composeMaterial = "1.2.1"
+
+accompanist = "0.25.1"
+
+[libraries]
+
+androidXCore = { group = "androidx.core", name = "core-ktx", version.ref = "androidXCore" }
+activityCompose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+
+composeRuntime = { group = "androidx.compose.runtime", name = "runtime", version.ref = "composeRuntime" }
+composeUi = { group = "androidx.compose.ui", name = "ui", version.ref = "composeUi" }
+composeMaterial = { group = "androidx.compose.material", name = "material", version.ref = "composeMaterial" }
+
+accompanistSystemUiController = { group = "com.google.accompanist", name = "accompanist-systemuicontroller", version.ref = "accompanist" }
+accompanistPager = { group = "com.google.accompanist", name = "accompanist-pager", version.ref = "accompanist" }
+
+[plugins]
+
+androidApplication = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+androidLibrary = { id = "com.android.library", version.ref = "androidGradlePlugin" }
+kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

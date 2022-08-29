@@ -1,7 +1,8 @@
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
+    alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.kotlinAndroid)
     id("maven-publish")
+    id("compost.java-conventions")
 }
 
 android {
@@ -39,8 +40,8 @@ android {
 }
 
 dependencies {
-    implementation(Dependencies.Compose.runtime)
-    implementation(Dependencies.Compose.material)
+    implementation(libs.composeRuntime)
+    implementation(libs.composeMaterial)
 
     implementation(project(":core"))
 }
