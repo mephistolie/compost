@@ -34,7 +34,7 @@ fun CircleImageButton(
     modifier: Modifier = Modifier,
     imageModifier: Modifier = Modifier,
     contentPadding: Dp = 0.dp,
-    background: Color = Color.LightGray,
+    background: Color = Color.Black.copy(alpha = 0.05F),
     contentDescription: String? = null
 ) {
     Button(

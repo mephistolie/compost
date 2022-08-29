@@ -11,3 +11,4 @@ rootProject.name = "Compost"
 
 include(":ui")
 include(":core")
+include(":demo")

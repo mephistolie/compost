@@ -10,12 +10,14 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.mephistolie.compost.modifiers.clippedBackground
 import com.mephistolie.compost.modifiers.simpleClickable
 
 /**
@@ -36,19 +38,19 @@ fun RadioButton(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
     size: Dp = 24.dp,
-    dotSize: Dp = size * 2/3,
+    dotSize: Dp = size * 3/4,
     borderWidth: Dp = size / 12,
     color: Color = MaterialTheme.colors.secondary,
     enabled: Boolean = true,
 ) {
     val transition = updateTransition(isSelected, label = "isSelected")
 
-    val alpha by transition.animateFloat(label = "alpha") { checked ->
-        if (checked) 1F else 0F
+    val alpha by transition.animateFloat(label = "alpha") { selected ->
+        if (selected) 1F else 0F
     }
 
     var baseModifier = modifier.size(size)
-    if (enabled) baseModifier = baseModifier.simpleClickable(onClick)
+    if (enabled) baseModifier = baseModifier.simpleClickable(onClick = onClick)
 
     Box(
         modifier = baseModifier
@@ -59,12 +61,14 @@ fun RadioButton(
                     color = color,
                 ),
                 shape = CircleShape,
-            )
+            ),
+        contentAlignment = Alignment.Center
     ) {
         Box(
             modifier = Modifier
-                .size(dotSize)
                 .alpha(alpha)
+                .clippedBackground(color, CircleShape)
+                .size(dotSize)
         )
     }
 }

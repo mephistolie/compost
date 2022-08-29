@@ -5,16 +5,16 @@ plugins {
 }
 
 android {
-    compileSdk = rootProject.extra.get("compileSdk") as Int
+    compileSdk = Config.compileSdk
 
     defaultConfig {
-        minSdk = rootProject.extra.get("minSdk") as Int
-        targetSdk = rootProject.extra.get("targetSdk") as Int
+        minSdk = Config.minSdk
+        targetSdk = Config.targetSdk
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
-        getByName("release") {
+        release {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
@@ -34,15 +34,14 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = rootProject.extra.get("composeVersion") as String
+        kotlinCompilerExtensionVersion = Dependencies.Compose.version
     }
 }
 
 dependencies {
-    val composeVersion: String by rootProject.extra
-    implementation("androidx.compose.runtime:runtime:$composeVersion")
-    implementation("androidx.compose.material:material:$composeVersion")
-    implementation("androidx.compose.foundation:foundation:$composeVersion")
+    implementation(Dependencies.Compose.runtime)
+    implementation(Dependencies.Compose.material)
+
     implementation(project(":core"))
 }
 
@@ -50,9 +49,9 @@ afterEvaluate {
     publishing {
         publications {
             create<MavenPublication>("release") {
-                groupId = rootProject.extra.get("groupId") as String
-                artifactId = "compost-ui"
-                version = rootProject.extra.get("libraryVersion") as String
+                groupId = MavenConfig.groupId
+                artifactId = MavenConfig.UI.artifactId
+                version = MavenConfig.version
 
                 from(components["release"])
             }

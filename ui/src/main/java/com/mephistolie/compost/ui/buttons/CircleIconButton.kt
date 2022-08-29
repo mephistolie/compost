@@ -39,7 +39,7 @@ fun CircleIconButton(
     iconModifier: Modifier = Modifier,
     contentPadding: Dp = 0.dp,
     tint: Color = LocalContentColor.current.copy(alpha = LocalContentAlpha.current),
-    background: Color = Color.LightGray,
+    background: Color = Color.Black.copy(alpha = 0.05F),
     contentDescription: String? = null
 ) {
     Button(

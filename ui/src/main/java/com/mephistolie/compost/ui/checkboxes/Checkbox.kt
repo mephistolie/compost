@@ -73,7 +73,7 @@ fun Checkbox(
     var baseModifier = modifier
         .size(size)
         .clip(shape)
-    if (enabled) baseModifier = baseModifier.simpleClickable(onClick)
+    if (enabled) baseModifier = baseModifier.simpleClickable(onClick = onClick)
 
 
     val checkboxModifier =
