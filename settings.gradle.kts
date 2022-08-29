@@ -7,6 +7,7 @@ pluginManagement {
 }
 
 dependencyResolutionManagement {
+    includeBuild("build-logic")
     repositories {
         google()
         mavenCentral()
