@@ -14,6 +14,8 @@ Compost is a kit of utility functions for Jetpack Compose that aim to speed up w
 A library that provides useful modifiers, shapes, scope extensions, etc.
 ### ✨ [UI](./ui/)
 A library that provide reusable animated UI-components.
+### ✨ [Demo](./demo/)
+Android Demo App with library features.
 
 ## Implementation
 
