@@ -28,9 +28,6 @@ fun GroupScreen(
     onClose: () -> Unit,
 ) {
     Column {
-        Row() {
-
-        }
         TopAppBar(
             title = {
                 Text(

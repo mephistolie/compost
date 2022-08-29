@@ -10,12 +10,16 @@ val uiFeatures = listOf(
         features = listOf(
             Feature(
                 name = "TextField",
-                description = "Analogue of standard TextField with more freedom. Instead of original it has modifiable paddings and doesn't apply background, minimum size and indicator line modifiers. You can add them by pass suitable modifier by default. Also singleLine argument reduced to maxLines.",
+                description = "Analogue of standard TextField with more freedom. Instead of original " +
+                        "it has modifiable paddings and doesn't apply background, minimum size and indicator " +
+                        "line modifiers. You can add them by pass suitable modifier by default. Also singleLine " +
+                        "argument reduced to maxLines.",
                 type = FeatureType.TEXT_FIELD
             ),
             Feature(
                 name = "IndicatorLineTextField",
-                description = "TextField with customizable indicator line. It also hasn't horizontal paddings by default, so text will be printed exactly from the beginning of the line.",
+                description = "TextField with customizable indicator line. It also hasn't horizontal paddings by " +
+                        "default, so text will be printed exactly from the beginning of the line.",
                 type = FeatureType.INDICATOR_LINE_TEXT_FIELD,
             ),
         ),
@@ -30,7 +34,8 @@ val uiFeatures = listOf(
             ),
             Feature(
                 name = "CircleImageButton",
-                description = "Round button with image. Useful when need to use a multicolor image. In other cases use function above.",
+                description = "Round button with image. Useful when need to use a multicolor image. In other cases " +
+                        "use function above.",
                 type = FeatureType.CIRCLE_IMAGE_BUTTON
             ),
             Feature(
