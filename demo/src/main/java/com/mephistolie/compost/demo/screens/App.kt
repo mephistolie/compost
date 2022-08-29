@@ -8,6 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
@@ -45,7 +46,7 @@ fun DemoApp() {
 
         val context = LocalContext.current
         val pagerState = rememberPagerState()
-        var openGroup by remember { mutableStateOf<FeatureGroup?>(null) }
+        var openGroup by rememberSaveable { mutableStateOf<FeatureGroup?>(null) }
 
         BackHandler(
             onBack = {

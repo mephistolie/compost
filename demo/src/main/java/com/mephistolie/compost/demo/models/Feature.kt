@@ -1,10 +1,12 @@
 package com.mephistolie.compost.demo.models
 
+import java.io.Serializable
+
 data class Feature(
     val name: String,
     val description: String,
     val type: FeatureType,
-)
+) : Serializable
 
 enum class FeatureType {
 
@@ -28,4 +30,4 @@ enum class FeatureType {
 data class FeatureGroup(
     val name: String,
     val features: List<Feature>,
-)
+) : Serializable
