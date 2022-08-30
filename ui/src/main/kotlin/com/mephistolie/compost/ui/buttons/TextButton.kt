@@ -88,7 +88,7 @@ fun TextButton(
 
     Button(
         onClick = onClick,
-        modifier = modifier.height(48.dp),
+        modifier = modifier,
         enabled = enabled,
         interactionSource = interactionSource,
         elevation = elevation,
