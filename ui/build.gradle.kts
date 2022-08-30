@@ -1,47 +1,12 @@
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.android)
+    id("com.mephistolie.compost.library")
     id("maven-publish")
 }
 
-android {
-    compileSdk = Config.compileSdk
-
-    defaultConfig {
-        minSdk = Config.minSdk
-        targetSdk = Config.targetSdk
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
-
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-        }
-    }
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
-
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11.toString()
-    }
-
-    buildFeatures {
-        compose = true
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = Dependencies.Compose.version
-    }
-}
-
 dependencies {
-    implementation(Dependencies.Compose.runtime)
-    implementation(Dependencies.Compose.material)
-
+    implementation(libs.compose.runtime)
     implementation(project(":core"))
 }
 
@@ -49,9 +14,9 @@ afterEvaluate {
     publishing {
         publications {
             create<MavenPublication>("release") {
-                groupId = MavenConfig.groupId
-                artifactId = MavenConfig.UI.artifactId
-                version = MavenConfig.version
+                groupId = libs.versions.groupId.get()
+                artifactId = "ui"
+                version = libs.versions.version.get()
 
                 from(components["release"])
             }

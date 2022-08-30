@@ -1,0 +1,48 @@
+[versions]
+
+compileSdk = "33"
+minSdk = "21"
+targetSdk = "33"
+
+applicationId = "com.mephistolie.compost.demo"
+versionCode = "1"
+version = "0.1"
+
+groupId = "com.github.mephistolie"
+
+androidGradlePlugin = "7.2.2"
+kotlin = "1.7.0"
+
+kotlinCompiler = "1.2.0"
+
+androidxCore = "1.8.0"
+androidxActivity = "1.5.1"
+
+compose = "1.2.0"
+composeRuntime = "1.2.1"
+composeUi = "1.2.1"
+composeMaterial = "1.2.1"
+
+accompanist = "0.25.1"
+
+[libraries]
+
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+
+androidx-core = { group = "androidx.core", name = "core-ktx", version.ref = "androidxCore" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidxActivity" }
+
+compose-runtime = { group = "androidx.compose.runtime", name = "runtime", version.ref = "composeRuntime" }
+compose-ui = { group = "androidx.compose.ui", name = "ui", version.ref = "composeUi" }
+compose-material = { group = "androidx.compose.material", name = "material", version.ref = "composeMaterial" }
+
+accompanist-systemUiController = { group = "com.google.accompanist", name = "accompanist-systemuicontroller", version.ref = "accompanist" }
+accompanist-pager = { group = "com.google.accompanist", name = "accompanist-pager", version.ref = "accompanist" }
+
+[plugins]
+
+android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+mavenPublish = { id = "maven-publish" }
