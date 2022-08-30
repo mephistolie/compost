@@ -14,6 +14,8 @@ Compost is a kit of utility functions for Jetpack Compose that aim to speed up w
 A library that provides useful modifiers, shapes, scope extensions, etc.
 ### ✨ [UI](./ui/)
 A library that provide reusable animated UI-components.
+### 📱 [Demo](./demo/)
+Android Demo App with library features.
 
 ## Implementation
 
@@ -62,6 +64,6 @@ Please use [GitFlow](https://www.atlassian.com/git/tutorials/comparing-workflows
 * `refactor/XXX` for improving existing stuff
 * `fix/XXX` for bug fixes
 
-If you add new features, describe it in suitable README.
+If you add new features, describe it in suitable README. Every feature should have documentation in code, description in README.md and demonstration at demo app.
 
 If you add someone else's code to collection, make sure that you do not violate the rights and added link to source.
