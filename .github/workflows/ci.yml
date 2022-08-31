@@ -23,15 +23,22 @@ jobs:
           gradle-version: current
           arguments: build
 
+      - name: Unite Statyc Analysis Reports
+        if: failure()
+        run: |
+          cat '# Core Static Analysis' > static-analysis.md
+          sed -n '2,10000p' core/build/reports/detekt/detekt.md >> static-analysis.md
+          cat '# UI Static Analysis' >> static-analysis.md
+          sed -n '2,10000p' ui/build/reports/detekt/detekt.md >> static-analysis.md
+          cat '# 'Demo App Static Analysis' >> static-analysis.md
+          sed -n '2,10000p' demo/build/reports/detekt/detekt.md >> static-analysis.md
+
       - name: Archive Static Analysis Reports
         if: failure()
         uses: actions/upload-artifact@v3
         with:
           name: static-analysis-reports
-          path: |
-            core/build/reports/detekt/*
-            ui/build/reports/detekt/*
-            demo/build/reports/detekt/*
+          path: static-analysis.md
           retention-days: 5
 
       - name: Send Telegram Static Analysis
@@ -42,10 +49,8 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: markdown
           message: |
-            Pull Request #${{ github.event.pull_request.number }}
+            Pull Request **#${{ github.event.pull_request.number }}**
             [${{ github.event.pull_request.title }}](https://github.com/${{ github.repository }}/pull/${{ github.event.pull_request.number }})
 
-            Build failed with Statyc Analysis Result
-            failed with following Statyc Analysis result
-          document: |
-            core/build/reports/detekt/detekt.txt
+            Build failed with following Statyc Analysis result
+          document: static-analysis.md
