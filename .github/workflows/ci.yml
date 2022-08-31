@@ -28,11 +28,11 @@ jobs:
         if: failure()
         run: |
           echo '# Core Static Analysis' > static-analysis.md
-          sed -n '2,10000p' core/build/reports/detekt/detekt.md >> static-analysis.md || echo "Core Static Analysis not found"
+          sed -n '2,10000p' core/build/reports/detekt/detekt.md >> static-analysis.md || exit 0
           echo '# UI Static Analysis' >> static-analysis.md
-          sed -n '2,10000p' ui/build/reports/detekt/detekt.md >> static-analysis.md || echo "UI Static Analysis not found"
+          sed -n '2,10000p' ui/build/reports/detekt/detekt.md >> static-analysis.md || exit 0
           echo '# 'Demo App Static Analysis' >> static-analysis.md
-          sed -n '2,10000p' demo/build/reports/detekt/detekt.md >> static-analysis.md || echo "Demo App Static Analysis not found"
+          sed -n '2,10000p' demo/build/reports/detekt/detekt.md >> static-analysis.md || exit 0
 
       - name: Archive Static Analysis Reports
         if: failure()
