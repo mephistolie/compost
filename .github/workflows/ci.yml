@@ -27,7 +27,8 @@ jobs:
         if: failure()
         uses: actions/upload-artifact@v3
         with:
-          name: reports-markdown
+          name: static-analysis-reports
           path: |
-            core/build/reports/detekt/detekt.md
-            ui/build/reports/detekt/detekt.md
+            core/build/reports/detekt/*
+            ui/build/reports/detekt/*
+          retention-days: 5

@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Button
+import androidx.compose.material.ButtonColors
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Icon
 import androidx.compose.material.LocalContentAlpha
@@ -13,7 +14,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.Dp
-import androidx.compose.ui.unit.dp
+import com.mephistolie.compost.ui.UiDefaults
+import com.mephistolie.compost.ui.UiDefaults.zeroPadding
 
 /**
  * Round button with image. Useful when need to use a pixel image. In other cases use [CircleImageButton]
@@ -25,7 +27,8 @@ import androidx.compose.ui.unit.dp
  * @param contentPadding The spacing values to apply internally between the container and the icon
  * @param tint tint to be applied to [imageVector]. If [Color.Unspecified] is provided, then no
  * tint is applied
- * @param background the background color of button
+ * @param colors [ButtonColors] that will be used to resolve the background and content color for
+ * this button in different states. See [ButtonDefaults.buttonColors].
  * @param contentDescription text used by accessibility services to describe what this icon
  * represents. This should always be provided unless this icon is used for decorative purposes,
  * and does not represent a meaningful action that a user can take. This text should be
@@ -37,18 +40,18 @@ fun CircleIconButton(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
     iconModifier: Modifier = Modifier,
-    contentPadding: Dp = 0.dp,
+    contentPadding: Dp = zeroPadding,
     tint: Color = LocalContentColor.current.copy(alpha = LocalContentAlpha.current),
-    background: Color = Color.Black.copy(alpha = 0.05F),
+    colors: ButtonColors = ButtonDefaults.buttonColors(),
     contentDescription: String? = null
 ) {
     Button(
         onClick = onClick,
         shape = CircleShape,
-        colors = ButtonDefaults.buttonColors(backgroundColor = background),
+        colors = colors,
         elevation = null,
         contentPadding = PaddingValues(contentPadding),
-        modifier = modifier.aspectRatio(1F)
+        modifier = modifier.aspectRatio(UiDefaults.squareRatio)
     ) {
         Icon(
             imageVector = icon,

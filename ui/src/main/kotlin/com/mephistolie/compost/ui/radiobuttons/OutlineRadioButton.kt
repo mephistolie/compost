@@ -14,8 +14,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
-import androidx.compose.ui.unit.dp
 import com.mephistolie.compost.modifiers.simpleClickable
+import com.mephistolie.compost.ui.UiDefaults.iconSize
+import com.mephistolie.compost.ui.UiDefaults.outlineRadioButtonSelectedBorderFactor
+import com.mephistolie.compost.ui.UiDefaults.outlineRadioButtonUnselectedBorderFactor
 
 /**
  * Animated analogue of standard [androidx.compose.material.RadioButton] with customizable shape.
@@ -34,9 +36,9 @@ fun OutlineRadioButton(
     isSelected: Boolean,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
-    size: Dp = 24.dp,
-    selectedBorderWidth: Dp = size / 3,
-    unselectedBorderWidth: Dp = size / 12,
+    size: Dp = iconSize,
+    selectedBorderWidth: Dp = size * outlineRadioButtonSelectedBorderFactor,
+    unselectedBorderWidth: Dp = size * outlineRadioButtonUnselectedBorderFactor,
     color: Color = MaterialTheme.colors.secondary,
     enabled: Boolean = true,
 ) {

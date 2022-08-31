@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.MaterialTheme
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -21,7 +22,7 @@ fun LazyListScope.textButtonFeatureContent() {
         ) {
             TextButton(
                 text = "TEXT BUTTON",
-                textColor = Color.White,
+                colors = ButtonDefaults.buttonColors(contentColor = Color.White),
                 onClick = {},
                 modifier = Modifier
                     .padding(bottom = 12.dp)
@@ -31,7 +32,10 @@ fun LazyListScope.textButtonFeatureContent() {
             )
             TextButton(
                 text = "TEXT BUTTON",
-                textColor = Color.White,
+                colors = ButtonDefaults.buttonColors(
+                    contentColor = Color.White,
+                    backgroundColor = MaterialTheme.colors.primaryVariant
+                ),
                 onClick = {},
                 modifier = Modifier
                     .fillMaxWidth()

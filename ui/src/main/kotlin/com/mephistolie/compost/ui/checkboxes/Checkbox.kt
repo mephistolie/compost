@@ -24,8 +24,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.Dp
-import androidx.compose.ui.unit.dp
 import com.mephistolie.compost.modifiers.simpleClickable
+import com.mephistolie.compost.ui.UiDefaults.checkboxDefaultCornerRadiusFactor
+import com.mephistolie.compost.ui.UiDefaults.iconSize
+import com.mephistolie.compost.ui.UiDefaults.opaqueAlpha
+import com.mephistolie.compost.ui.UiDefaults.selectedCheckboxBorderFactor
+import com.mephistolie.compost.ui.UiDefaults.transparentAlpha
+import com.mephistolie.compost.ui.UiDefaults.unselectedCheckboxBorderFactor
 
 /**
  * Animated analogue of standard [androidx.compose.material.Checkbox] with customizable shape.
@@ -48,8 +53,8 @@ fun Checkbox(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
     checkmarkIcon: ImageVector = Icons.Rounded.Check,
-    size: Dp = 24.dp,
-    shape: Shape = RoundedCornerShape(size / 12),
+    size: Dp = iconSize,
+    shape: Shape = RoundedCornerShape(size * checkboxDefaultCornerRadiusFactor),
     checkmarkSize: Dp = size,
     checkedColor: Color = MaterialTheme.colors.secondary,
     uncheckedColor: Color = checkedColor,
@@ -59,11 +64,11 @@ fun Checkbox(
     val transition = updateTransition(isChecked, label = "isChecked")
 
     val borderWidth by transition.animateDp(label = "borderWidth") { checked ->
-        if (checked) size / 2 else size / 12
+        if (checked) size * selectedCheckboxBorderFactor else size * unselectedCheckboxBorderFactor
     }
 
     val alpha by transition.animateFloat(label = "alpha") { checked ->
-        if (checked) 1F else 0F
+        if (checked) opaqueAlpha else transparentAlpha
     }
 
     val backgroundColor by transition.animateColor(label = "backgroundColor") { checked ->

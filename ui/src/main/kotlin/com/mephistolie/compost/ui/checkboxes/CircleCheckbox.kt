@@ -9,7 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.Dp
-import androidx.compose.ui.unit.dp
+import com.mephistolie.compost.ui.UiDefaults.iconSize
 
 /**
  * [Checkbox] implementation with circle shape.
@@ -31,7 +31,7 @@ fun CircleCheckbox(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
     checkmarkIcon: ImageVector = Icons.Rounded.Check,
-    size: Dp = 24.dp,
+    size: Dp = iconSize,
     checkmarkSize: Dp = size,
     checkedColor: Color = MaterialTheme.colors.secondary,
     uncheckedColor: Color = checkedColor,

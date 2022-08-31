@@ -16,9 +16,13 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
-import androidx.compose.ui.unit.dp
 import com.mephistolie.compost.modifiers.clippedBackground
 import com.mephistolie.compost.modifiers.simpleClickable
+import com.mephistolie.compost.ui.UiDefaults.iconSize
+import com.mephistolie.compost.ui.UiDefaults.opaqueAlpha
+import com.mephistolie.compost.ui.UiDefaults.radioButtonBorderFactor
+import com.mephistolie.compost.ui.UiDefaults.radioButtonDotSizeFactor
+import com.mephistolie.compost.ui.UiDefaults.transparentAlpha
 
 /**
  * Analogue of standard [androidx.compose.material.RadioButton] with animated stroke instead of dot.
@@ -37,16 +41,16 @@ fun RadioButton(
     isSelected: Boolean,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
-    size: Dp = 24.dp,
-    dotSize: Dp = size * 3/4,
-    borderWidth: Dp = size / 12,
+    size: Dp = iconSize,
+    dotSize: Dp = size * radioButtonDotSizeFactor,
+    borderWidth: Dp = size * radioButtonBorderFactor,
     color: Color = MaterialTheme.colors.secondary,
     enabled: Boolean = true,
 ) {
     val transition = updateTransition(isSelected, label = "isSelected")
 
     val alpha by transition.animateFloat(label = "alpha") { selected ->
-        if (selected) 1F else 0F
+        if (selected) opaqueAlpha else transparentAlpha
     }
 
     var baseModifier = modifier.size(size)

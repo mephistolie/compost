@@ -5,8 +5,10 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyListScope
+import androidx.compose.material.ButtonDefaults
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.mephistolie.compost.demo.R
@@ -22,6 +24,7 @@ fun LazyListScope.circleImageButtonFeatureContent() {
             CircleImageButton(
                 image = painterResource(R.mipmap.ic_compose),
                 onClick = {},
+                colors = ButtonDefaults.buttonColors(backgroundColor = Color.Black.copy(0.05F)),
                 modifier = Modifier
                     .padding(end = 12.dp)
                     .size(48.dp)
