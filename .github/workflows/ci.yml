@@ -42,7 +42,7 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: markdown
           message: |
-            Pull Request #${{ github.event.number }}
+            Pull Request #${{ github.event.pull_request.number }}
             [${{ github.event.pull_request.title }}](https://github.com/${{ github.repository }}/pull/${{event.number}})
 
             Build failed with Statyc Analysis Result
