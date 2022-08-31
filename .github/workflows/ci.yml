@@ -24,6 +24,7 @@ jobs:
           arguments: build
 
       - name: Archive Static Analysis Reports
+        if: failure()
         uses: actions/upload-artifact@v3
         with:
           name: reports-markdown
