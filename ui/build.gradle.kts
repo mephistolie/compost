@@ -3,6 +3,12 @@ plugins {
     id("maven-publish")
 }
 
+detekt {
+    allRules = true
+    parallel = true
+    config = files("$rootDir/detekt-config.yml")
+}
+
 dependencies {
     implementation(libs.compose.runtime)
     implementation(project(":core"))

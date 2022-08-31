@@ -13,6 +13,7 @@ class CompostLibraryModuleConventionPlugin : Plugin<Project> {
             val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
             pluginManager.apply(libs.findPlugin("android-library").get().get().pluginId)
             pluginManager.apply(libs.findPlugin("kotlin-android").get().get().pluginId)
+            pluginManager.apply(libs.findPlugin("detekt").get().get().pluginId)
 
             extensions.configure<LibraryExtension> {
                 configureCompostCommonModule(this)

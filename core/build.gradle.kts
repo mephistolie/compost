@@ -3,6 +3,12 @@ plugins {
     id("maven-publish")
 }
 
+detekt {
+    parallel = true
+    allRules = true
+    config = files("$rootDir/detekt-config.yml")
+}
+
 afterEvaluate {
     publishing {
         publications {
