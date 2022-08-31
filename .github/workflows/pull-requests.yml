@@ -4,6 +4,8 @@ on:
   pull_request:
     types:
       - opened
+      - edited
+      - closed
     branches: [ "main", "develop" ]
 
 jobs:
@@ -17,10 +19,13 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: markdown
+          disable_web_page_preview: true
+          disable_notification: true
           message: |
             Pull Request *#${{ github.event.pull_request.number }}*
             [${{ github.event.pull_request.title }}](https://github.com/${{ github.repository }}/pull/${{ github.event.pull_request.number }})
+            by [${{ github.actor }}](https://github.com/${{ github.actor }})
 
             *${{ github.event.pull_request.head.ref }}* -> *${{ github.event.pull_request.base.ref }}*
 
-            Just created by [${{ github.actor }}](https://github.com/${{ github.actor }})
+            Status: ${{ github.event.action }}

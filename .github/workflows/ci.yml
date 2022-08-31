@@ -26,13 +26,16 @@ jobs:
 
       - name: Unite Statyc Analysis Reports
         if: failure()
-        run: |
+        run:
+          touch core/build/reports/detekt/detekt.md
+          touch ui/build/reports/detekt/detekt.md
+          touch demo/build/reports/detekt/detekt.md
           echo '# Core Static Analysis' > static-analysis.md
-          sed -n '2,10000p' core/build/reports/detekt/detekt.md >> static-analysis.md || exit 0
+          sed -n '2,10000p' core/build/reports/detekt/detekt.md >> static-analysis.md
           echo '# UI Static Analysis' >> static-analysis.md
-          sed -n '2,10000p' ui/build/reports/detekt/detekt.md >> static-analysis.md || exit 0
+          sed -n '2,10000p' ui/build/reports/detekt/detekt.md >> static-analysis.md
           echo '# 'Demo App Static Analysis' >> static-analysis.md
-          sed -n '2,10000p' demo/build/reports/detekt/detekt.md >> static-analysis.md || exit 0
+          sed -n '2,10000p' demo/build/reports/detekt/detekt.md >> static-analysis.md
 
       - name: Archive Static Analysis Reports
         if: failure()
@@ -49,9 +52,11 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: markdown
+          disable_web_page_preview: true
           message: |
             Pull Request *#${{ github.event.pull_request.number }}*
             [${{ github.event.pull_request.title }}](https://github.com/${{ github.repository }}/pull/${{ github.event.pull_request.number }})
+            by [${{ github.actor }}](https://github.com/${{ github.actor }})
 
             *${{ github.event.pull_request.head.ref }}* -> *${{ github.event.pull_request.base.ref }}*
 
