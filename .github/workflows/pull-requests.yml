@@ -1,0 +1,23 @@
+name: Compost Pull Requests
+
+on:
+  pull_request:
+    types:
+      - opened
+    branches: [ "main", "develop" ]
+
+jobs:
+  build:
+    name: Telegram Notification
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Telegram Notification on Pull Request open
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            Pull Request #${{ github.event.number }}
+            [${{ github.event.pull_request.title }}](https://github.com/${{ github.repository }}/pull/${{event.number}})
+
+            Just created by ${{ github.actor }}

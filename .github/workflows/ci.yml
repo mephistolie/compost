@@ -40,10 +40,12 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
+          format: markdown
           message: |
-            Build for https://github.com/${{ github.repository }}/commit/${{github.sha}}
-            failed with following Statyc Analysis result:
+            Pull Request #${{ github.event.number }}
+            [${{ github.event.pull_request.title }}](https://github.com/${{ github.repository }}/pull/${{event.number}})
+
+            Build failed with Statyc Analysis Result
+            failed with following Statyc Analysis result
           document: |
             core/build/reports/detekt/detekt.txt
-            ui/build/reports/detekt/detekt.txt
-            demo/build/reports/detekt/detekt.txt
