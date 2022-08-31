@@ -23,7 +23,6 @@ import com.mephistolie.compost.demo.screens.feature.views.radiobuttons.radioButt
 import com.mephistolie.compost.demo.screens.feature.views.textfields.indicatorLineTextFieldFeatureContent
 import com.mephistolie.compost.demo.screens.feature.views.textfields.textFieldFeatureContent
 
-@Suppress("ComplexMethod")
 fun LazyListScope.featureContent(
     feature: Feature,
 ) {

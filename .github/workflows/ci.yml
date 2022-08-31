@@ -33,3 +33,17 @@ jobs:
             ui/build/reports/detekt/*
             demo/build/reports/detekt/*
           retention-days: 5
+
+      - name: Send Telegram Static Analysis
+        if: failure()
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            Build for https://github.com/${{ github.repository }}/commit/${{github.sha}}
+            failed with following Statyc Analysis result:
+          document: |
+            core/build/reports/detekt/detekt.txt
+            ui/build/reports/detekt/detekt.txt
+            demo/build/reports/detekt/detekt.txt
