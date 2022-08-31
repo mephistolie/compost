@@ -9,6 +9,7 @@ import com.mephistolie.compost.demo.screens.feature.modifiers.clippedBackgroundF
 import com.mephistolie.compost.demo.screens.feature.modifiers.debounceClickableFeatureContent
 import com.mephistolie.compost.demo.screens.feature.modifiers.scalingClickableFeatureContent
 import com.mephistolie.compost.demo.screens.feature.modifiers.simpleClickableFeatureContent
+import com.mephistolie.compost.demo.screens.feature.runtime.rememberSaveableMutableStateListOfFeatureContent
 import com.mephistolie.compost.demo.screens.feature.shapes.dashedLineShapeFeatureContent
 import com.mephistolie.compost.demo.screens.feature.views.textfields.indicatorLineTextFieldFeatureContent
 import com.mephistolie.compost.demo.screens.feature.views.textfields.textFieldFeatureContent
@@ -25,6 +26,7 @@ fun LazyListScope.featureContent(
     feature: Feature,
 ) {
     when (feature.type) {
+        FeatureType.REMEMBER_SAVEABLE_MUTABLE_LIST -> rememberSaveableMutableStateListOfFeatureContent()
         FeatureType.SHADING -> shadingFeatureContent()
         FeatureType.GRID_ITEMS -> gridItemsFeatureContent()
         FeatureType.CLIPPED_BACKGROUND -> clippedBackgroundFeatureContent()
