@@ -6,6 +6,17 @@ import com.mephistolie.compost.demo.models.FeatureType
 
 val coreFeatures = listOf(
     FeatureGroup(
+        name = "Runtime",
+        features = listOf(
+            Feature(
+                name = "rememberMutableStateListOf()",
+                description = "rememberSaveable() that ready to use with mutable lists. Make sure you understand why you are using it, cause it's\n" +
+                        " * very specific scenario. In most cases data should be stored at view model.",
+                type = FeatureType.REMEMBER_SAVEABLE_MUTABLE_LIST
+            ),
+        ),
+    ),
+    FeatureGroup(
         name = "Scope Extensions",
         features = listOf(
             Feature(

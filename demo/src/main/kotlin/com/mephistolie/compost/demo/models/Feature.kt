@@ -10,6 +10,9 @@ data class Feature(
 
 enum class FeatureType {
 
+    //Runtime
+    REMEMBER_SAVEABLE_MUTABLE_LIST,
+
     // Scope Extensions
     SHADING, GRID_ITEMS,
 
