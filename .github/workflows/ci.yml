@@ -9,6 +9,7 @@ on:
 
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -27,11 +28,11 @@ jobs:
         if: failure()
         run: |
           echo '# Core Static Analysis' > static-analysis.md
-          sed -n '2,10000p' core/build/reports/detekt/detekt.md >> static-analysis.md
+          sed -n '2,10000p' core/build/reports/detekt/detekt.md >> static-analysis.md || return 0
           echo '# UI Static Analysis' >> static-analysis.md
-          sed -n '2,10000p' ui/build/reports/detekt/detekt.md >> static-analysis.md
+          sed -n '2,10000p' ui/build/reports/detekt/detekt.md >> static-analysis.md || return 0
           echo '# 'Demo App Static Analysis' >> static-analysis.md
-          sed -n '2,10000p' demo/build/reports/detekt/detekt.md >> static-analysis.md
+          sed -n '2,10000p' demo/build/reports/detekt/detekt.md >> static-analysis.md || return 0
 
       - name: Archive Static Analysis Reports
         if: failure()
@@ -49,7 +50,7 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: markdown
           message: |
-            # Pull Request #${{ github.event.pull_request.number }}
+            Pull Request *bold \*#${{ github.event.pull_request.number }}*
             # [${{ github.event.pull_request.title }}](https://github.com/${{ github.repository }}/pull/${{ github.event.pull_request.number }})
 
             Build failed with following Statyc Analysis result
