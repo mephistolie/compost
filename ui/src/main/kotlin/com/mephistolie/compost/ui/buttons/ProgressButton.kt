@@ -40,6 +40,7 @@ import androidx.compose.ui.unit.dp
  * @param contentPadding The spacing values to apply internally between the container and the content
  * @param indicatorColor Color of progress indicator
  * @param indicatorStrokeWidth Width of progress indicator stroke
+ * @param contentPadding If you need custom progress indicator, use this param instead of indicator params above
  */
 @Composable
 fun ProgressButton(
