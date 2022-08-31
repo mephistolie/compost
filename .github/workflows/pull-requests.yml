@@ -1,4 +1,4 @@
-name: Compost Pull Requests
+name: Compost Pull Requests Creation
 
 on:
   pull_request:
@@ -18,7 +18,9 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: markdown
           message: |
-            Pull Request *bold \*#${{ github.event.pull_request.number }}*
+            Pull Request *#${{ github.event.pull_request.number }}*
             [${{ github.event.pull_request.title }}](https://github.com/${{ github.repository }}/pull/${{ github.event.pull_request.number }})
+
+            *${{ github.event.pull_request.head.ref }}* -> *${{ github.event.pull_request.base.ref }}*
 
             Just created by [${{ github.actor }}](https://github.com/${{ github.actor }})
