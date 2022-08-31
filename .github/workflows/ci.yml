@@ -43,7 +43,7 @@ jobs:
           format: markdown
           message: |
             Pull Request #${{ github.event.pull_request.number }}
-            [${{ github.event.pull_request.title }}](https://github.com/${{ github.repository }}/pull/${{event.number}})
+            [${{ github.event.pull_request.title }}](https://github.com/${{ github.repository }}/pull/${{ github.event.pull_request.number }})
 
             Build failed with Statyc Analysis Result
             failed with following Statyc Analysis result

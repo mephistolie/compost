@@ -18,6 +18,6 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             Pull Request #${{ github.event.pull_request.number }}
-            [${{ github.event.pull_request.title }}](https://github.com/${{ github.repository }}/pull/${{event.number}})
+            [${{ github.event.pull_request.title }}](https://github.com/${{ github.repository }}/pull/${{ github.event.pull_request.number }})
 
             Just created by ${{ github.actor }}
