@@ -69,7 +69,6 @@ fun Modifier.scalingClickable(
  * @param onClick will be called when user clicks on the element
  */
 @OptIn(ExperimentalComposeUiApi::class)
-@Suppress("LabeledExpression")
 fun Modifier.scalingClickable(
     pressed: MutableState<Boolean>,
     scaleFactor: Float = 0.975F,
