@@ -46,6 +46,7 @@ fun LazyListScope.gridItems(
  * by [Phil Dukhov](https://stackoverflow.com/users/3585796/phil-dukhov)
  *
  * @author Phil Dukhov
+ * @param T type of list item
  * @param data list of items
  * @param columns count of columns for grid
  * @param horizontalArrangement [Arrangement] that will be applied to inner [Row]

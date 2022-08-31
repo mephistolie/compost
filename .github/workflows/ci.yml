@@ -22,3 +22,11 @@ jobs:
         with:
           gradle-version: current
           arguments: build
+
+      - name: Archive Static Analysis Reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: reports-markdown
+          path: |
+            core/build/reports/detekt/detekt.md
+            ui/build/reports/detekt/detekt.md
