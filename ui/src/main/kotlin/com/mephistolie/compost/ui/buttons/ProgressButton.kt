@@ -5,8 +5,17 @@ import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.interaction.Interaction
 import androidx.compose.foundation.interaction.MutableInteractionSource
-import androidx.compose.foundation.layout.*
-import androidx.compose.material.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxScope
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.size
+import androidx.compose.material.Button
+import androidx.compose.material.ButtonColors
+import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.ButtonElevation
+import androidx.compose.material.CircularProgressIndicator
+import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -22,7 +31,6 @@ import androidx.compose.ui.unit.dp
  * @param onClick Will be called when the user clicks the button
  * @param modifier Modifier to be applied to the button
  * @param indicatorModifier Modifier to be applied to the progress indicator
- * @param indicatorSize Size of indicator
  * @param isLoading Loading State
  * @param enabled Controls the enabled state of the button. When `false`, this button will not
  * be clickable
@@ -40,7 +48,8 @@ import androidx.compose.ui.unit.dp
  * @param contentPadding The spacing values to apply internally between the container and the content
  * @param indicatorColor Color of progress indicator
  * @param indicatorStrokeWidth Width of progress indicator stroke
- * @param contentPadding If you need custom progress indicator, use this param instead of indicator params above
+ * @param indicator If you need custom progress indicator, use this param instead of indicator params above
+ * @param content normal state button content
  */
 @Composable
 fun ProgressButton(

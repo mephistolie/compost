@@ -56,7 +56,7 @@ fun <T: Any> rememberSaveableMutableStateListOf(vararg elements: T): SnapshotSta
  * @param T type of list element
  * @param list mutable list of elements
  */
-@Suppress("FunctionMaxLength")
+@Suppress("FunctionMaxLength", "SpreadOperator")
 @Composable
 inline fun <reified T: Any> rememberSaveableMutableStateListOf(list: MutableList<T>): SnapshotStateList<T>  =
     rememberSaveableMutableStateListOf(*list.map { it }.toTypedArray())
