@@ -17,6 +17,7 @@ import androidx.compose.ui.Modifier
  * [StackOverflow](https://stackoverflow.com/questions/69336555/fixed-grid-inside-lazycolumn-in-jetpack-compose)
  * by [Phil Dukhov](https://stackoverflow.com/users/3585796/phil-dukhov)
  *
+ * @author Phil Dukhov
  * @param count count of items
  * @param columns count of columns for grid
  * @param horizontalArrangement [Arrangement] that will be applied to inner [Row]
@@ -44,6 +45,7 @@ fun LazyListScope.gridItems(
  * [StackOverflow](https://stackoverflow.com/questions/69336555/fixed-grid-inside-lazycolumn-in-jetpack-compose)
  * by [Phil Dukhov](https://stackoverflow.com/users/3585796/phil-dukhov)
  *
+ * @author Phil Dukhov
  * @param data list of items
  * @param columns count of columns for grid
  * @param horizontalArrangement [Arrangement] that will be applied to inner [Row]

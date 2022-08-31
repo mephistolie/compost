@@ -69,6 +69,7 @@ fun Modifier.scalingClickable(
  * @param onClick will be called when user clicks on the element
  */
 @OptIn(ExperimentalComposeUiApi::class)
+@Suppress("LabeledExpression")
 fun Modifier.scalingClickable(
     pressed: MutableState<Boolean>,
     scaleFactor: Float = 0.975F,
@@ -167,6 +168,7 @@ fun Modifier.debounceClickable(
  * will be used
  * @param onClick will be called when the element is successfully clicked
  **/
+@Suppress("LabeledExpression")
 fun Modifier.debounceClickable(
     interactionSource: MutableInteractionSource,
     indication: Indication?,
@@ -186,7 +188,7 @@ fun Modifier.debounceClickable(
     ) {
         if (debounceInterval != null) {
             val currentTime = System.currentTimeMillis()
-            if ((currentTime - lastClickTime) < debounceInterval) return@clickable
+            if (currentTime - lastClickTime < debounceInterval) return@clickable
             lastClickTime = currentTime
         }
         onClick()
