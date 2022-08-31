@@ -16,7 +16,7 @@ default, so text will be printed exactly from the beginning of the line.
 * `CircleImageButton` is a round button with image. Useful when need to use a multicolor image. In other cases use
 function above.
 * `TextButton` is a button with text inside.
-* `ProgressButton` is a button with text inside.
+* `ProgressButton` is a button with loading animation support and customizable progress indicator.
 
 ### Checkboxes
 
