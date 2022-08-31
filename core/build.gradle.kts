@@ -6,7 +6,7 @@ plugins {
 detekt {
     parallel = true
     allRules = true
-    config = files("$rootDir/detekt-config.yml")
+    config = files("$rootDir/detekt/library-config.yml")
 }
 
 afterEvaluate {

@@ -9,7 +9,7 @@ import androidx.compose.runtime.toMutableStateList
 /**
  *
  * rememberSaveable() that ready to use with mutable lists. Make sure you understand why you are using it, cause it's
- * very specific scenario. In most cases data should be stored at view model.
+ * a very specific scenario. In most cases data should be stored at view model.
  *
  * Copied from
  * [StackOverflow](https://stackoverflow.com/questions/68885154/using-remembersaveable-with-mutablestatelistof),
@@ -45,7 +45,7 @@ fun <T: Any> rememberSaveableMutableStateListOf(vararg elements: T): SnapshotSta
 /**
  *
  * rememberSaveable() that ready to use with mutable lists. Make sure you understand why you are using it, cause it's
- * very specific scenario. In most cases data should be stored at view model.
+ * a very specific scenario. In most cases data should be stored at view model.
  *
  * Copied from
  * [StackOverflow](https://stackoverflow.com/questions/68885154/using-remembersaveable-with-mutablestatelistof),
@@ -58,5 +58,5 @@ fun <T: Any> rememberSaveableMutableStateListOf(vararg elements: T): SnapshotSta
  */
 @Suppress("FunctionMaxLength")
 @Composable
-inline fun <reified T: Any> rememberSaveableMutableStateListOf(list: MutableList<T>) =
-    rememberSaveableMutableStateListOf(list.map { it }.toTypedArray())
+inline fun <reified T: Any> rememberSaveableMutableStateListOf(list: MutableList<T>): SnapshotStateList<T>  =
+    rememberSaveableMutableStateListOf(*list.map { it }.toTypedArray())

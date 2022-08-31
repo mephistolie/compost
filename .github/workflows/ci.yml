@@ -31,4 +31,5 @@ jobs:
           path: |
             core/build/reports/detekt/*
             ui/build/reports/detekt/*
+            demo/build/reports/detekt/*
           retention-days: 5

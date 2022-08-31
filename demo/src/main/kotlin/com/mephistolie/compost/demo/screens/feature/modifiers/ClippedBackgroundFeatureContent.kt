@@ -25,22 +25,21 @@ fun LazyListScope.clippedBackgroundFeatureContent() {
                     .padding(bottom = if (index == 0) 12.dp else 0.dp)
                     .fillMaxWidth()
                     .height(48.dp)
-                modifier = when (index) {
-                    1 -> modifier
-                        .clippedBackground(MaterialTheme.colors.primary, RoundedCornerShape(percent = 100))
-                    else -> modifier
-                        .background(MaterialTheme.colors.primary, RoundedCornerShape(percent = 100))
-                }
+                modifier =
+                    if (index == 1) {
+                        modifier
+                            .clippedBackground(MaterialTheme.colors.primary, RoundedCornerShape(percent = 100))
+                    } else {
+                        modifier
+                            .background(MaterialTheme.colors.primary, RoundedCornerShape(percent = 100))
+                    }
                 Box(
                     modifier = modifier
                         .clickable{},
                     contentAlignment = Alignment.Center,
                 ) {
                     Text(
-                        text = when (index) {
-                            1 -> "CLIPPED BACKGROUND"
-                            else -> "STANDARD BACKGROUND"
-                        },
+                        text = if (index == 1) "CLIPPED BACKGROUND" else "STANDARD BACKGROUND",
                         color = Color.White
                     )
                 }

@@ -11,8 +11,6 @@ import com.mephistolie.compost.demo.screens.feature.modifiers.scalingClickableFe
 import com.mephistolie.compost.demo.screens.feature.modifiers.simpleClickableFeatureContent
 import com.mephistolie.compost.demo.screens.feature.runtime.rememberSaveableMutableStateListOfFeatureContent
 import com.mephistolie.compost.demo.screens.feature.shapes.dashedLineShapeFeatureContent
-import com.mephistolie.compost.demo.screens.feature.views.textfields.indicatorLineTextFieldFeatureContent
-import com.mephistolie.compost.demo.screens.feature.views.textfields.textFieldFeatureContent
 import com.mephistolie.compost.demo.screens.feature.views.buttons.circleIconButtonFeatureContent
 import com.mephistolie.compost.demo.screens.feature.views.buttons.circleImageButtonFeatureContent
 import com.mephistolie.compost.demo.screens.feature.views.buttons.textButtonFeatureContent
@@ -21,7 +19,10 @@ import com.mephistolie.compost.demo.screens.feature.views.checkboxes.circleCheck
 import com.mephistolie.compost.demo.screens.feature.views.checkboxes.rectangleCheckboxFeatureComponent
 import com.mephistolie.compost.demo.screens.feature.views.radiobuttons.outlineRadioButtonFeatureComponent
 import com.mephistolie.compost.demo.screens.feature.views.radiobuttons.radioButtonFeatureComponent
+import com.mephistolie.compost.demo.screens.feature.views.textfields.indicatorLineTextFieldFeatureContent
+import com.mephistolie.compost.demo.screens.feature.views.textfields.textFieldFeatureContent
 
+@Suppress("ComplexMethod")
 fun LazyListScope.featureContent(
     feature: Feature,
 ) {
