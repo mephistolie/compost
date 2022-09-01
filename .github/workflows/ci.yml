@@ -4,6 +4,9 @@ on:
   push:
     tags: [ "*" ]
     branches: [ "main", "develop" ]
+  pull_request_review:
+    types:
+      - app
   pull_request:
     branches: [ "main", "develop" ]
 
@@ -24,18 +27,9 @@ jobs:
           gradle-version: current
           arguments: build
 
-      - name: Unite Statyc Analysis Reports
+      - name: Unite Static Analysis Reports
         if: failure()
-        run:
-          touch core/build/reports/detekt/detekt.md
-          touch ui/build/reports/detekt/detekt.md
-          touch demo/build/reports/detekt/detekt.md
-          echo '# Core Static Analysis' > static-analysis.md
-          sed -n '2,10000p' core/build/reports/detekt/detekt.md >> static-analysis.md
-          echo '# UI Static Analysis' >> static-analysis.md
-          sed -n '2,10000p' ui/build/reports/detekt/detekt.md >> static-analysis.md
-          echo '# 'Demo App Static Analysis' >> static-analysis.md
-          sed -n '2,10000p' demo/build/reports/detekt/detekt.md >> static-analysis.md
+        run: ./detekt/unite-reports.sh
 
       - name: Archive Static Analysis Reports
         if: failure()
