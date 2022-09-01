@@ -4,9 +4,6 @@ on:
   push:
     tags: [ "*" ]
     branches: [ "main", "develop" ]
-  pull_request_review:
-    types:
-      - app
   pull_request:
     branches: [ "main", "develop" ]
 

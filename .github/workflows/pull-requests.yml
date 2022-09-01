@@ -4,12 +4,14 @@ on:
   pull_request:
     types:
       - opened
-      - edited
       - closed
     branches: [ "main", "develop" ]
+  pull_request_review:
+    types:
+      - submitted
 
 jobs:
-  build:
+  notify:
     name: Telegram Notification
     runs-on: ubuntu-latest
     steps:
