@@ -54,5 +54,5 @@ jobs:
 
             *${{ github.event.pull_request.head.ref }}* -> *${{ github.event.pull_request.base.ref }}*
 
-            Build failed with following Statyc Analysis result
+            Build failed with following Static Analysis result
           document: static-analysis.md
