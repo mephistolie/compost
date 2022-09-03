@@ -10,8 +10,9 @@ val coreFeatures = listOf(
         features = listOf(
             Feature(
                 name = "rememberMutableStateListOf()",
-                description = "rememberSaveable() that ready to use with mutable lists. Make sure you understand why you are using it, cause it's\n" +
-                        " * very specific scenario. In most cases data should be stored at view model.",
+                description = "rememberSaveable() that ready to use with mutable lists. Make sure you understand " +
+                        "why you are using it, cause it's a very specific scenario. In most cases data should be " +
+                        "stored at view model.",
                 type = FeatureType.REMEMBER_SAVEABLE_MUTABLE_LIST
             ),
         ),
@@ -21,8 +22,9 @@ val coreFeatures = listOf(
         features = listOf(
             Feature(
                 name = "Shading",
-                description = "Useful for Boxes that can be pressed. Instead of standard ripple this one is fade animated. " +
-                        "Multiple shadings can be managed by single bool (for example, to create shading effect on whole complex item card).",
+                description = "Useful for Boxes that can be pressed. Instead of standard ripple this one is fade " +
+                        "animated. Multiple shadings can be managed by single bool (for example, to create shading " +
+                        "effect on whole complex item card).",
                 type = FeatureType.SHADING
             ),
             Feature(
@@ -56,8 +58,8 @@ val coreFeatures = listOf(
             ),
             Feature(
                 name = "debounceClickable()",
-                description = "Allows you to set click timeout to prevent extra clicks. Button below shows toasts and has " +
-                        "5 seconds debounce interval.",
+                description = "Allows you to set click timeout to prevent extra clicks. Button below shows toasts " +
+                        "and has 5 seconds debounce interval.",
                 type = FeatureType.DEBOUNCE_CLICKABLE
             ),
         ),
@@ -67,7 +69,8 @@ val coreFeatures = listOf(
         features = listOf(
             Feature(
                 name = "DashedLineShape",
-                description = "Provides horizontal/vertical dashed line shape for dividers. Supports unequal width and gap.",
+                description = "Provides horizontal/vertical dashed line shape for dividers. Supports unequal width " +
+                        "and gap.",
                 type = FeatureType.DASHED_LINE_SHAPE
             ),
         ),

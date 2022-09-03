@@ -1,0 +1,20 @@
+comments:
+  active: false
+
+complexity:
+  LongParameterList:
+    # Compose Function Parameter List
+    functionThreshold: 30
+
+naming:
+  FunctionMaxLength:
+    active: false
+  FunctionNaming:
+    # Compose Pascal Case
+    functionPattern: '[a-zA-Z0-9]*'
+
+style:
+  MagicNumber:
+    active: false
+  SerialVersionUIDInSerializableClass:
+    active: false

@@ -60,18 +60,14 @@ fun MainScreen(
                 modifier = Modifier.fillMaxWidth()
             ) {
                 when (pageIndex) {
-                    Module.CORE.ordinal -> {
-                        GroupList(
-                            groups = coreFeatures,
-                            onGroupClick = onGroupClick,
-                        )
-                    }
-                    Module.UI.ordinal -> {
-                        GroupList(
-                            groups = uiFeatures,
-                            onGroupClick = onGroupClick,
-                        )
-                    }
+                    Module.CORE.ordinal -> GroupList(
+                        groups = coreFeatures,
+                        onGroupClick = onGroupClick,
+                    )
+                    Module.UI.ordinal -> GroupList(
+                        groups = uiFeatures,
+                        onGroupClick = onGroupClick,
+                    )
                 }
             }
         }

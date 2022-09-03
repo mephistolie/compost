@@ -8,13 +8,13 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyListScope
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.mephistolie.compost.demo.theme.Shapes
 import com.mephistolie.compost.modifiers.clippedBackground
 
 fun LazyListScope.clippedBackgroundFeatureContent() {
@@ -25,22 +25,21 @@ fun LazyListScope.clippedBackgroundFeatureContent() {
                     .padding(bottom = if (index == 0) 12.dp else 0.dp)
                     .fillMaxWidth()
                     .height(48.dp)
-                modifier = when (index) {
-                    1 -> modifier
-                        .clippedBackground(MaterialTheme.colors.primary, RoundedCornerShape(percent = 100))
-                    else -> modifier
-                        .background(MaterialTheme.colors.primary, RoundedCornerShape(percent = 100))
-                }
+                modifier =
+                    if (index == 1) {
+                        modifier
+                            .clippedBackground(MaterialTheme.colors.primary, Shapes.circleCornerShape)
+                    } else {
+                        modifier
+                            .background(MaterialTheme.colors.primary, Shapes.circleCornerShape)
+                    }
                 Box(
                     modifier = modifier
                         .clickable{},
                     contentAlignment = Alignment.Center,
                 ) {
                     Text(
-                        text = when (index) {
-                            1 -> "CLIPPED BACKGROUND"
-                            else -> "STANDARD BACKGROUND"
-                        },
+                        text = if (index == 1) "CLIPPED BACKGROUND" else "STANDARD BACKGROUND",
                         color = Color.White
                     )
                 }

@@ -15,9 +15,12 @@ import androidx.compose.ui.Modifier
  * However if you need to place a few grids with columns GCD equals 1 (2 and 3) at single screen,
  * it would be a problem. This extension is a temporary fix.
  *
- * Originally written at [StackOverflow](https://stackoverflow.com/questions/69336555/fixed-grid-inside-lazycolumn-in-jetpack-compose)
- * by [Phil Dukhov](https://stackoverflow.com/users/3585796/phil-dukhov)
+ * Originally written at
+ * [StackOverflow](https://stackoverflow.com/questions/69336555/fixed-grid-inside-lazycolumn-in-jetpack-compose)
+ * by
+ * [Phil Dukhov](https://stackoverflow.com/users/3585796/phil-dukhov)
  *
+ * @author Phil Dukhov
  * @param count count of items
  * @param columns count of columns for grid
  * @param horizontalArrangement [Arrangement] that will be applied to inner [Row]
@@ -41,10 +44,15 @@ fun LazyListScope.gridItems(
  * Creates grid of elements for LazyColumn.
  * In most cases you should use standard `LazyVerticalGrid` / `LazyHorizontalGrid` with specified spans.
  * However if you need to place a few grids with columns GCD equals 1 (2 and 3) at single screen,
- * it would be a problem. This extension is a temporary fix.<p>Originally written at
- * [StackOverflow](https://stackoverflow.com/questions/69336555/fixed-grid-inside-lazycolumn-in-jetpack-compose)
- * by [Phil Dukhov](https://stackoverflow.com/users/3585796/phil-dukhov)
+ * it would be a problem. This extension is a temporary fix.
  *
+ * Originally written at
+ * [StackOverflow](https://stackoverflow.com/questions/69336555/fixed-grid-inside-lazycolumn-in-jetpack-compose)
+ * by
+ * [Phil Dukhov](https://stackoverflow.com/users/3585796/phil-dukhov)
+ *
+ * @author Phil Dukhov
+ * @param T type of list item
  * @param data list of items
  * @param columns count of columns for grid
  * @param horizontalArrangement [Arrangement] that will be applied to inner [Row]

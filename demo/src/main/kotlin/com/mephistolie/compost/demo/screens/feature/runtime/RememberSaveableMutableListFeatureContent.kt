@@ -1,16 +1,19 @@
 package com.mephistolie.compost.demo.screens.feature.runtime
 
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyListScope
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.mephistolie.compost.demo.theme.Colors
+import com.mephistolie.compost.demo.theme.Shapes
 import com.mephistolie.compost.modifiers.clippedBackground
 import com.mephistolie.compost.runtime.rememberSaveableMutableStateListOf
 import com.mephistolie.compost.ui.buttons.TextButton
@@ -33,7 +36,6 @@ fun LazyListScope.rememberSaveableMutableStateListOfFeatureContent() {
             ) {
                 TextButton(
                     text = "REMOVE ELEMENT",
-                    textColor = Color.White,
                     onClick = { data.removeAt(data.size - 1) },
                     enabled = data.size > 1,
                     modifier = Modifier
@@ -41,13 +43,12 @@ fun LazyListScope.rememberSaveableMutableStateListOfFeatureContent() {
                         .fillMaxWidth()
                         .height(48.dp)
                         .clippedBackground(
-                            background = if (data.size > 1) MaterialTheme.colors.primary else Color.Black.copy(alpha = 0.05F),
-                            shape = RoundedCornerShape(8.dp)
+                            background = if (data.size > 1) MaterialTheme.colors.primary else Colors.black5,
+                            shape = Shapes.roundedCornerShape8
                         )
                 )
                 TextButton(
                     text = "ADD ELEMENT",
-                    textColor = Color.White,
                     onClick = { data.add(data.size + 1) },
                     enabled = data.size < 10,
                     modifier = Modifier
@@ -55,8 +56,8 @@ fun LazyListScope.rememberSaveableMutableStateListOfFeatureContent() {
                         .fillMaxWidth()
                         .height(48.dp)
                         .clippedBackground(
-                            background = if (data.size < 10) MaterialTheme.colors.primary else Color.Black.copy(alpha = 0.05F),
-                            shape = RoundedCornerShape(8.dp)
+                            background = if (data.size < 10) MaterialTheme.colors.primary else Colors.black5,
+                            shape = Shapes.roundedCornerShape8
                         )
                 )
             }
