@@ -25,12 +25,12 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.Dp
 import com.mephistolie.compost.modifiers.simpleClickable
-import com.mephistolie.compost.ui.UiDefaults.CHECKBOX_CORNER_RADIUS_FACTOR
-import com.mephistolie.compost.ui.UiDefaults.iconSize
 import com.mephistolie.compost.ui.UiDefaults.ALPHA_OPAQUE
-import com.mephistolie.compost.ui.UiDefaults.SELECTED_CHECKBOX_BORDER_FACTOR
 import com.mephistolie.compost.ui.UiDefaults.ALPHA_TRANSPARENT
+import com.mephistolie.compost.ui.UiDefaults.CHECKBOX_CORNER_RADIUS_FACTOR
+import com.mephistolie.compost.ui.UiDefaults.SELECTED_CHECKBOX_BORDER_FACTOR
 import com.mephistolie.compost.ui.UiDefaults.UNSELECTED_CHECKBOX_BORDER_FACTOR
+import com.mephistolie.compost.ui.UiDefaults.iconSize
 
 /**
  * Animated analogue of standard [androidx.compose.material.Checkbox] with customizable shape.

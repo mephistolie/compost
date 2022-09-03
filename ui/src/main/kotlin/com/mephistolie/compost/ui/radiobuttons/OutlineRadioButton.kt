@@ -15,9 +15,9 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import com.mephistolie.compost.modifiers.simpleClickable
-import com.mephistolie.compost.ui.UiDefaults.iconSize
 import com.mephistolie.compost.ui.UiDefaults.OUTLINE_RADIO_BUTTON_SELECTED_BORDER_FACTOR
 import com.mephistolie.compost.ui.UiDefaults.OUTLINE_RADIO_BUTTON_UNSELECTED_BORDER_FACTOR
+import com.mephistolie.compost.ui.UiDefaults.iconSize
 
 /**
  * Animated analogue of standard [androidx.compose.material.RadioButton] with customizable shape.

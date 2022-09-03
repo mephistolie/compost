@@ -18,11 +18,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import com.mephistolie.compost.modifiers.clippedBackground
 import com.mephistolie.compost.modifiers.simpleClickable
-import com.mephistolie.compost.ui.UiDefaults.iconSize
 import com.mephistolie.compost.ui.UiDefaults.ALPHA_OPAQUE
+import com.mephistolie.compost.ui.UiDefaults.ALPHA_TRANSPARENT
 import com.mephistolie.compost.ui.UiDefaults.RADIO_BUTTON_BORDER_FACTOR
 import com.mephistolie.compost.ui.UiDefaults.RADIO_BUTTON_DOT_SIZE_FACTOR
-import com.mephistolie.compost.ui.UiDefaults.ALPHA_TRANSPARENT
+import com.mephistolie.compost.ui.UiDefaults.iconSize
 
 /**
  * Analogue of standard [androidx.compose.material.RadioButton] with animated stroke instead of dot.

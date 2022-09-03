@@ -14,7 +14,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.Dp
-import com.mephistolie.compost.ui.UiDefaults
 import com.mephistolie.compost.ui.UiDefaults.SQUARE_RATIO
 import com.mephistolie.compost.ui.UiDefaults.zeroPadding
 
