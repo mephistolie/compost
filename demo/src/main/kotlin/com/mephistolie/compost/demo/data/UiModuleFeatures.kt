@@ -43,6 +43,11 @@ val uiFeatures = listOf(
                 description = "Button with text inside.",
                 type = FeatureType.TEXT_BUTTON
             ),
+            Feature(
+                name = "ProgressButton",
+                description = "Button with loading animation support and customizable progress indicator.",
+                type = FeatureType.PROGRESS_BUTTON
+            ),
         ),
     ),
     FeatureGroup(

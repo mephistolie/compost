@@ -59,11 +59,13 @@ Compost is a multimodule library, so you can implement just modules you need:
 
 Compost is a collection of independent useful things, so community defines it. Please contribute - we are happy to merge it!
 
-Please use [GitFlow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) and [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) to keep Git history clean:
+Please use [GitFlow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) and
+[Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) to keep Git history clean:
 * `feature/XXX` for new stuff
 * `refactor/XXX` for improving existing stuff
 * `fix/XXX` for bug fixes
 
-If you add new features, describe it in suitable README. Every feature should have documentation in code, description in README.md and demonstration at demo app.
+If you add new features, describe it in suitable README. Every feature should have documentation in code, description in
+README.md and demonstration at demo app.
 
 If you add someone else's code to collection, make sure that you do not violate the rights and added link to source.

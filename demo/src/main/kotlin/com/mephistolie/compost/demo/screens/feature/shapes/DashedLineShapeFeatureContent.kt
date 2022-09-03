@@ -13,7 +13,7 @@ import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.mephistolie.compost.shapes.DashedLineShape
+import com.mephistolie.compost.demo.theme.Shapes
 
 fun LazyListScope.dashedLineShapeFeatureContent() {
     item {
@@ -22,7 +22,7 @@ fun LazyListScope.dashedLineShapeFeatureContent() {
                 .padding(bottom = 16.dp)
                 .fillMaxWidth()
                 .height(2.dp)
-                .background(color = Color.DarkGray, shape = DashedLineShape(10.dp))
+                .background(color = Color.DarkGray, shape = Shapes.uniformDashedLine)
         )
     }
     item {
@@ -31,7 +31,7 @@ fun LazyListScope.dashedLineShapeFeatureContent() {
                 .padding(bottom = 16.dp)
                 .fillMaxWidth()
                 .height(2.dp)
-                .background(color = Color.DarkGray, shape = DashedLineShape(20.dp, 10.dp))
+                .background(color = Color.DarkGray, shape = Shapes.nonuniformDashedLine)
         )
     }
     item {
@@ -47,7 +47,7 @@ fun LazyListScope.dashedLineShapeFeatureContent() {
                         .padding(horizontal = 16.dp)
                         .width(2.dp)
                         .height(56.dp)
-                        .background(color = Color.DarkGray, shape = DashedLineShape(6.dp, 4.dp, vertical = true))
+                        .background(color = Color.DarkGray, shape = Shapes.verticalDashedLine)
                 )
             }
         }
