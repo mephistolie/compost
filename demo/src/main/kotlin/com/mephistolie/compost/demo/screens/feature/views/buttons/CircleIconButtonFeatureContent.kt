@@ -12,8 +12,8 @@ import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.mephistolie.compost.demo.theme.Colors
 import com.mephistolie.compost.ui.buttons.CircleIconButton
 
 fun LazyListScope.circleIconButtonFeatureContent() {
@@ -30,7 +30,7 @@ fun LazyListScope.circleIconButtonFeatureContent() {
                         1 -> Icons.Default.Home
                         else -> Icons.Default.Refresh
                     },
-                    colors = ButtonDefaults.buttonColors(backgroundColor = Color.Black.copy(0.05F)),
+                    colors = ButtonDefaults.buttonColors(backgroundColor = Colors.black5),
                     onClick = {},
                     modifier = Modifier
                         .padding(end = 12.dp)

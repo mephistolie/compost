@@ -5,12 +5,12 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyListScope
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.MaterialTheme
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.mephistolie.compost.demo.theme.Shapes
 import com.mephistolie.compost.modifiers.clippedBackground
 import com.mephistolie.compost.ui.buttons.TextButton
 
@@ -28,7 +28,7 @@ fun LazyListScope.textButtonFeatureContent() {
                     .padding(bottom = 12.dp)
                     .fillMaxWidth()
                     .height(48.dp)
-                    .clippedBackground(MaterialTheme.colors.primary, RoundedCornerShape(percent = 100))
+                    .clippedBackground(MaterialTheme.colors.primary, Shapes.circleCornerShape)
             )
             TextButton(
                 text = "TEXT BUTTON",
@@ -40,7 +40,7 @@ fun LazyListScope.textButtonFeatureContent() {
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(48.dp)
-                    .clippedBackground(MaterialTheme.colors.primaryVariant, RoundedCornerShape(8.dp))
+                    .clippedBackground(MaterialTheme.colors.primaryVariant, Shapes.roundedCornerShape8)
             )
         }
     }

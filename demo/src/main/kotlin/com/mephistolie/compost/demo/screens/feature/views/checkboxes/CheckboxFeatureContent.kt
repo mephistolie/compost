@@ -6,8 +6,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.CutCornerShape
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
@@ -17,6 +15,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.mephistolie.compost.demo.theme.Shapes
 import com.mephistolie.compost.ui.checkboxes.Checkbox
 
 fun LazyListScope.checkboxFeatureComponent() {
@@ -37,8 +36,8 @@ fun LazyListScope.checkboxFeatureComponent() {
                     },
                     size = 32.dp,
                     shape = when(index) {
-                        0 -> RoundedCornerShape(12.dp)
-                        1 -> CutCornerShape(8.dp)
+                        0 -> Shapes.roundedCornerShape12
+                        1 -> Shapes.cutCornerShape12
                         else -> CircleShape
                     },
                     checkmarkSize = when(index) {
