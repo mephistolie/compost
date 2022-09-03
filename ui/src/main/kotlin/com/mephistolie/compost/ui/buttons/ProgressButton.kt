@@ -24,6 +24,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.mephistolie.compost.ui.UiDefaults.progressButtonIndicatorSize
+import com.mephistolie.compost.ui.UiDefaults.progressButtonIndicatorStrokeWidth
 
 /**
  * Button with loading animation support and customizable progress indicator.
@@ -55,7 +57,7 @@ import androidx.compose.ui.unit.dp
 fun ProgressButton(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
-    indicatorModifier: Modifier = Modifier.size(28.dp),
+    indicatorModifier: Modifier = Modifier.size(progressButtonIndicatorSize),
     isLoading: Boolean = false,
     enabled: Boolean = true,
     interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
@@ -65,7 +67,7 @@ fun ProgressButton(
     colors: ButtonColors = ButtonDefaults.buttonColors(),
     contentPadding: PaddingValues = ButtonDefaults.ContentPadding,
     indicatorColor: Color = MaterialTheme.colors.primary,
-    indicatorStrokeWidth: Dp = 3.dp,
+    indicatorStrokeWidth: Dp = progressButtonIndicatorStrokeWidth,
     indicator: @Composable BoxScope.() -> Unit = {
         CircularProgressIndicator(
             modifier = indicatorModifier,

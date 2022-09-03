@@ -24,7 +24,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.VisualTransformation
-import com.mephistolie.compost.ui.UiDefaults.singleLine
+import com.mephistolie.compost.ui.UiDefaults.SINGLE_LINE
 
 /**
  * Analogue of standard TextField with more freedom. Instead of original it has modifiable paddings
@@ -129,7 +129,7 @@ fun TextField(
                 label = label,
                 leadingIcon = leadingIcon,
                 trailingIcon = trailingIcon,
-                singleLine = maxLines == singleLine,
+                singleLine = maxLines == SINGLE_LINE,
                 enabled = enabled,
                 isError = isError,
                 interactionSource = interactionSource,

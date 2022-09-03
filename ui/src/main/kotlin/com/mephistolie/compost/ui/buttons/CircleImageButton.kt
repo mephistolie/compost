@@ -11,7 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.unit.Dp
-import com.mephistolie.compost.ui.UiDefaults
+import com.mephistolie.compost.ui.UiDefaults.SQUARE_RATIO
 import com.mephistolie.compost.ui.UiDefaults.zeroPadding
 
 /**
@@ -46,7 +46,7 @@ fun CircleImageButton(
         elevation = null,
         contentPadding = PaddingValues(contentPadding),
         modifier = modifier
-            .aspectRatio(UiDefaults.squareRatio),
+            .aspectRatio(SQUARE_RATIO),
     ) {
         Image(
             painter = image,

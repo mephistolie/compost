@@ -15,6 +15,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.Dp
 import com.mephistolie.compost.ui.UiDefaults
+import com.mephistolie.compost.ui.UiDefaults.SQUARE_RATIO
 import com.mephistolie.compost.ui.UiDefaults.zeroPadding
 
 /**
@@ -51,7 +52,7 @@ fun CircleIconButton(
         colors = colors,
         elevation = null,
         contentPadding = PaddingValues(contentPadding),
-        modifier = modifier.aspectRatio(UiDefaults.squareRatio)
+        modifier = modifier.aspectRatio(SQUARE_RATIO)
     ) {
         Icon(
             imageVector = icon,

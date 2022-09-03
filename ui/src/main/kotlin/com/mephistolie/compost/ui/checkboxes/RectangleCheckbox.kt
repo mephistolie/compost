@@ -9,7 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.Dp
-import com.mephistolie.compost.ui.UiDefaults.checkboxDefaultCornerRadiusFactor
+import com.mephistolie.compost.ui.UiDefaults.CHECKBOX_CORNER_RADIUS_FACTOR
 import com.mephistolie.compost.ui.UiDefaults.iconSize
 
 /**
@@ -35,7 +35,7 @@ fun RectangleCheckbox(
     checkmarkIcon: ImageVector = Icons.Rounded.Check,
     size: Dp = iconSize,
     checkmarkSize: Dp = size,
-    cornerRadius: Dp = size * checkboxDefaultCornerRadiusFactor,
+    cornerRadius: Dp = size * CHECKBOX_CORNER_RADIUS_FACTOR,
     checkedColor: Color = MaterialTheme.colors.secondary,
     uncheckedColor: Color = checkedColor,
     checkmarkColor: Color = MaterialTheme.colors.surface,

@@ -22,7 +22,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.TextUnit
-import com.mephistolie.compost.ui.UiDefaults.singleLine
+import com.mephistolie.compost.ui.UiDefaults.SINGLE_LINE
 
 /**
  * Button with text inside.
@@ -102,7 +102,7 @@ fun TextButton(
             letterSpacing = letterSpacing,
             textDecoration = textDecoration,
             textAlign = textAlign,
-            maxLines = singleLine,
+            maxLines = SINGLE_LINE,
             style = textStyle
         )
     }
