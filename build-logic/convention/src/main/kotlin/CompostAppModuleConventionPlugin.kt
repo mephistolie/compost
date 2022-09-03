@@ -11,6 +11,9 @@ class CompostApplicationModuleConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
+            pluginManager.apply(libs.findPlugin("android-application").get().get().pluginId)
+            pluginManager.apply(libs.findPlugin("kotlin-android").get().get().pluginId)
+            pluginManager.apply(libs.findPlugin("detekt").get().get().pluginId)
 
             extensions.configure<ApplicationExtension> {
                 configureCompostCommonModule(this)

@@ -15,6 +15,8 @@ kotlin = "1.7.0"
 
 kotlinCompiler = "1.2.0"
 
+detekt = "1.21.0"
+
 androidxCore = "1.8.0"
 androidxActivity = "1.5.1"
 
@@ -46,3 +48,4 @@ android-application = { id = "com.android.application", version.ref = "androidGr
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 mavenPublish = { id = "maven-publish" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }

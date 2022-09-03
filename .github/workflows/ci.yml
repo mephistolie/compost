@@ -1,0 +1,55 @@
+name: Compost CI
+
+on:
+  push:
+    tags: [ "*" ]
+    branches: [ "main", "develop" ]
+  pull_request:
+    branches: [ "main", "develop" ]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Set up JDK 11
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11
+
+      - name: Build
+        uses: gradle/gradle-build-action@v2
+        with:
+          gradle-version: current
+          arguments: build
+
+      - name: Unite Static Analysis Reports
+        if: failure()
+        run: ./detekt/unite-reports.sh
+
+      - name: Archive Static Analysis Reports
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: static-analysis-reports
+          path: static-analysis.md
+          retention-days: 5
+
+      - name: Send Telegram Static Analysis
+        if: failure()
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          format: markdown
+          disable_web_page_preview: true
+          message: |
+            Pull Request *#${{ github.event.pull_request.number }}*
+            [${{ github.event.pull_request.title }}](https://github.com/${{ github.repository }}/pull/${{ github.event.pull_request.number }})
+            by [${{ github.actor }}](https://github.com/${{ github.actor }})
+
+            *${{ github.event.pull_request.head.ref }}* -> *${{ github.event.pull_request.base.ref }}*
+
+            Build failed with following Static Analysis result
+          document: static-analysis.md

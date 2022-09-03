@@ -1,8 +1,12 @@
 plugins {
-    alias(libs.plugins.android.library)
-    alias(libs.plugins.kotlin.android)
     id("com.mephistolie.compost.library")
     id("maven-publish")
+}
+
+detekt {
+    parallel = true
+    allRules = true
+    config = files("$rootDir/detekt/library-config.yml")
 }
 
 afterEvaluate {

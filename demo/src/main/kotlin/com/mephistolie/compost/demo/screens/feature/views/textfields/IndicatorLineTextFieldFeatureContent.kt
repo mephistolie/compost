@@ -14,9 +14,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.unit.dp
+import com.mephistolie.compost.demo.theme.Colors
 import com.mephistolie.compost.ui.textfields.IndicatorLineTextField
 
 @OptIn(ExperimentalComposeUiApi::class)
@@ -38,7 +38,7 @@ fun LazyListScope.indicatorLineTextFieldFeatureContent() {
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(56.dp),
-                colors = TextFieldDefaults.textFieldColors(backgroundColor = Color.White.copy(alpha = 0.7F))
+                colors = TextFieldDefaults.textFieldColors(backgroundColor = Colors.white70)
             )
             IndicatorLineTextField(
                 value = secondText.value,
@@ -54,7 +54,7 @@ fun LazyListScope.indicatorLineTextFieldFeatureContent() {
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(56.dp),
-                colors = TextFieldDefaults.textFieldColors(backgroundColor = Color.White.copy(alpha = 0.7F))
+                colors = TextFieldDefaults.textFieldColors(backgroundColor = Colors.white70)
             )
         }
     }

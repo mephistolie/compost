@@ -26,7 +26,8 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.Dp
-import androidx.compose.ui.unit.dp
+import com.mephistolie.compost.ui.UiDefaults.labeledTextFieldVerticalPaddings
+import com.mephistolie.compost.ui.UiDefaults.textFieldVerticalPaddings
 
 /**
  * [TextField] with customizable indicator line. It also hasn't horizontal paddings by default,
@@ -102,16 +103,7 @@ fun IndicatorLineTextField(
     interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
     colors: TextFieldColors = TextFieldDefaults.textFieldColors(),
     contentPadding: PaddingValues =
-        if (label == null) {
-            PaddingValues(vertical = 16.dp)
-        } else {
-            PaddingValues(
-                start = 0.dp,
-                top = 20.dp,
-                end = 0.dp,
-                bottom = 10.dp,
-            )
-        },
+        if (label == null) textFieldVerticalPaddings else labeledTextFieldVerticalPaddings,
     indicatorLineEnabled: Boolean = enabled,
     focusedIndicatorLineThickness: Dp = FocusedBorderThickness,
     unfocusedIndicatorLineThickness: Dp = UnfocusedBorderThickness,
