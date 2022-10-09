@@ -16,6 +16,10 @@ fix.<p>*Originally written at [StackOverflow](https://stackoverflow.com/question
 
 ## Modifiers
 
+### Paddings
+
+* `padding()` Flexible wrapper of padding. Use `horizontal`/`vertical` and side paddings together to reduce arguments count.
+
 ### Background
 
 * `clippedBackground()` creates clipped background instead of standard `background()` that applies shape only visually.
