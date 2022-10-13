@@ -41,6 +41,12 @@ val coreFeatures = listOf(
         name = "Modifiers",
         features = listOf(
             Feature(
+                name = "padding()",
+                description = "Flexible wrapper of padding. Use horizontal/vertical and side paddings together to " +
+                        "reduce arguments count.",
+                type = FeatureType.PADDINGS
+            ),
+            Feature(
                 name = "clippedBackground()",
                 description = "Creates clipped background instead of standard background() that applies " +
                         "shape only visually. Suitable for clipping clickable modifier's ripple.",

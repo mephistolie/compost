@@ -7,6 +7,7 @@ import com.mephistolie.compost.demo.screens.feature.extensions.gridItemsFeatureC
 import com.mephistolie.compost.demo.screens.feature.extensions.shadingFeatureContent
 import com.mephistolie.compost.demo.screens.feature.modifiers.clippedBackgroundFeatureContent
 import com.mephistolie.compost.demo.screens.feature.modifiers.debounceClickableFeatureContent
+import com.mephistolie.compost.demo.screens.feature.modifiers.paddingsFeatureContent
 import com.mephistolie.compost.demo.screens.feature.modifiers.scalingClickableFeatureContent
 import com.mephistolie.compost.demo.screens.feature.modifiers.simpleClickableFeatureContent
 import com.mephistolie.compost.demo.screens.feature.runtime.rememberSaveableMutableStateListOfFeatureContent
@@ -32,6 +33,7 @@ fun LazyListScope.featureContent(
         FeatureType.SHADING -> shadingFeatureContent()
         FeatureType.GRID_ITEMS -> gridItemsFeatureContent()
 
+        FeatureType.PADDINGS -> paddingsFeatureContent()
         FeatureType.CLIPPED_BACKGROUND -> clippedBackgroundFeatureContent()
         FeatureType.SIMPLE_CLICKABLE -> simpleClickableFeatureContent()
         FeatureType.SCALING_CLICKABLE -> scalingClickableFeatureContent()
