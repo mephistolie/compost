@@ -83,20 +83,19 @@ fun Modifier.scalingClickable(
     this
         .scale(scale.value)
         .pointerInteropFilter {
-            if (debounceInterval != null) {
-                val currentTime = System.currentTimeMillis()
-                if (currentTime - lastClickTime < debounceInterval) {
-                    pressed.value = false
-                    return@pointerInteropFilter true
-                }
-                lastClickTime = currentTime
-            }
             when (it.action) {
                 MotionEvent.ACTION_DOWN -> pressed.value = true
                 MotionEvent.ACTION_CANCEL -> pressed.value = false
                 MotionEvent.ACTION_UP -> {
-                    onClick()
                     pressed.value = false
+                    if (debounceInterval != null) {
+                        val currentTime = System.currentTimeMillis()
+                        if (currentTime - lastClickTime < debounceInterval) {
+                            return@pointerInteropFilter true
+                        }
+                        lastClickTime = currentTime
+                    }
+                    onClick()
                 }
             }
             true
