@@ -24,7 +24,7 @@ import com.mephistolie.compost.ui.UiDefaults.zeroPadding
  * @param onClick Will be called when the user clicks the button
  * @param modifier [Modifier] to be applied to the button
  * @param iconModifier [Modifier] to be applied to the icon
- * @param @param enabled Controls the enabled state of the button. When false, this button will not be clickable
+ * @param enabled Controls the enabled state of the button. When false, this button will not be clickable
  * @param contentPadding The spacing values to apply internally between the container and the icon
  * @param tint tint to be applied to [imageVector]. If [Color.Unspecified] is provided, then no
  * tint is applied
