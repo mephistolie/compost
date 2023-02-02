@@ -22,8 +22,9 @@ import com.mephistolie.compost.ui.UiDefaults.zeroPadding
  *
  * @param icon [ImageVector] to draw
  * @param onClick Will be called when the user clicks the button
- * @param modifier a [Modifier] to be applied to the button
- * @param iconModifier a [Modifier] to be applied to the icon
+ * @param modifier [Modifier] to be applied to the button
+ * @param iconModifier [Modifier] to be applied to the icon
+ * @param @param enabled Controls the enabled state of the button. When false, this button will not be clickable
  * @param contentPadding The spacing values to apply internally between the container and the icon
  * @param tint tint to be applied to [imageVector]. If [Color.Unspecified] is provided, then no
  * tint is applied
@@ -40,6 +41,7 @@ fun CircleIconButton(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
     iconModifier: Modifier = Modifier,
+    enabled: Boolean = true,
     contentPadding: Dp = zeroPadding,
     tint: Color = LocalContentColor.current.copy(alpha = LocalContentAlpha.current),
     colors: ButtonColors = ButtonDefaults.buttonColors(),
@@ -47,6 +49,7 @@ fun CircleIconButton(
 ) {
     Button(
         onClick = onClick,
+        enabled = enabled,
         shape = CircleShape,
         colors = colors,
         elevation = null,
